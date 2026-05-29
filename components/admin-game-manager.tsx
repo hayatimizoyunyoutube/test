@@ -114,7 +114,7 @@ function GameFormFields({ game }: { game?: AdminGame }) {
       const payload = await response.json();
 
       if (!payload.ok) {
-        setRawgStatus(payload.message || 'RAWG araması başarısız oldu.');
+        setRawgStatus(payload.message || `RAWG araması başarısız oldu. HTTP ${response.status}`);
         return;
       }
 
