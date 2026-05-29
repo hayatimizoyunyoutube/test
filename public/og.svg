@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#070914"/>
+      <stop offset="0.5" stop-color="#111936"/>
+      <stop offset="1" stop-color="#06141f"/>
+    </linearGradient>
+    <linearGradient id="g" x1="140" y1="130" x2="1060" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="990" cy="80" r="230" fill="#22D3EE" opacity="0.16"/>
+  <circle cx="180" cy="560" r="260" fill="#8B5CF6" opacity="0.22"/>
+  <rect x="90" y="90" width="1020" height="450" rx="48" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="140" y="220" font-family="Arial, sans-serif" font-size="42" font-weight="800" fill="#AAB2CE">Yeni Sistem v0.0.2</text>
+  <text x="140" y="330" font-family="Arial, sans-serif" font-size="92" font-weight="900" fill="white" letter-spacing="-6">Hayatımız Oyun</text>
+  <text x="140" y="410" font-family="Arial, sans-serif" font-size="34" font-weight="600" fill="#D9E2FF">Next.js + Supabase + RAWG + YouTube</text>
+  <rect x="140" y="455" width="380" height="12" rx="6" fill="url(#g)"/>
+</svg>

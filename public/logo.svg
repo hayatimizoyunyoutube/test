@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Hayatımız Oyun logo">
+  <defs>
+    <linearGradient id="g" x1="64" y1="64" x2="448" y2="448" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="#070914"/>
+  <rect x="46" y="46" width="420" height="420" rx="110" fill="url(#g)" opacity="0.92"/>
+  <text x="256" y="294" text-anchor="middle" font-family="Arial, sans-serif" font-size="148" font-weight="900" fill="white" letter-spacing="-16">HO</text>
+</svg>
