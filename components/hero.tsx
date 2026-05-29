@@ -14,7 +14,7 @@ export function Hero() {
       </div>
       <div className="hero-card panel">
         <div className="terminal-dots"><span /><span /><span /></div>
-        <p className="terminal-label">v0.0.2 / clean architecture</p>
+        <p className="terminal-label">v0.0.3 / clean architecture</p>
         <div className="stack-lines">
           <span>Next.js App Router</span>
           <span>Supabase database</span>

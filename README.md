@@ -1,4 +1,4 @@
-# Hayatımız Oyun — Yeni Sistem v0.0.2
+# Hayatımız Oyun — Yeni Sistem v0.0.3
 
 Bu paket eski sistemi taşımadan sıfırdan hazırlanmış yeni mimarinin ikinci sürümüdür.
 
@@ -19,7 +19,7 @@ Bu paket eski sistemi taşımadan sıfırdan hazırlanmış yeni mimarinin ikinc
 - RAWG API
 - YouTube Data API
 
-## v0.0.2 İçeriği
+## v0.0.3 İçeriği
 
 - `/admin/games` oyun yönetimi sayfası
 - Supabase’den oyun listeleme

@@ -36,7 +36,7 @@ export default async function AdminGamesPage({ searchParams }: AdminGamesPagePro
 
       <section className="admin-hero panel">
         <div>
-          <span className="eyebrow">Admin Panel v0.0.2</span>
+          <span className="eyebrow">Admin Panel v0.0.3</span>
           <h1>Oyun yönetimi aktif.</h1>
           <p>
             Bu sürümde oyun ekleme, düzenleme, silme ve listeleme modülü eklendi. Sistem eski projeden taşınmadı;

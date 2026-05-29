@@ -10,10 +10,10 @@ export default function AdminPage() {
       <ProHeader />
       <section className="admin-hero panel">
         <div>
-          <span className="eyebrow">Admin Panel v0.0.2</span>
+          <span className="eyebrow">Admin Panel v0.0.3</span>
           <h1>Yeni panel iskeleti aktif modüllere ayrıldı.</h1>
           <p>
-            v0.0.2 ile oyun yönetimi aktif edildi. Sıradaki sürümlerde RAWG kapak çekme, YouTube senkronizasyonu ve sürüm notları paneli eklenecek.
+            v0.0.3 ile oyun yönetimi aktif edildi. Sıradaki sürümlerde RAWG kapak çekme, YouTube senkronizasyonu ve sürüm notları paneli eklenecek.
           </p>
         </div>
         <Link className="ghost-button" href="/">Siteye dön</Link>

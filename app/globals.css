@@ -482,3 +482,124 @@ img { max-width: 100%; display: block; }
   .span-2 { grid-column: span 1; }
   .small-actions { justify-content: flex-start; }
 }
+
+/* v0.0.3 RAWG search helper */
+.rawg-helper-box {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(34, 211, 238, 0.07);
+  border: 1px solid rgba(34, 211, 238, 0.18);
+}
+.rawg-helper-box h3 {
+  margin: 12px 0 6px;
+  font-size: 22px;
+  letter-spacing: -0.04em;
+}
+.rawg-helper-box p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.rawg-search-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+.rawg-search-button {
+  min-height: 46px;
+  border: none;
+  cursor: pointer;
+}
+.rawg-search-button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+.rawg-status {
+  padding: 10px 12px;
+  border-radius: 14px;
+  color: #d9e2ff;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-weight: 800;
+}
+.rawg-result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.rawg-result-card {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 18px;
+  text-align: left;
+  color: var(--text);
+  background: rgba(3, 7, 18, 0.46);
+  border: 1px solid rgba(255,255,255,0.11);
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+.rawg-result-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(34, 211, 238, 0.42);
+}
+.rawg-result-cover {
+  display: grid;
+  place-items: center;
+  min-height: 96px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.07);
+}
+.rawg-result-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rawg-result-cover strong {
+  color: var(--soft);
+  font-size: 12px;
+}
+.rawg-result-body {
+  display: grid;
+  align-content: center;
+  min-width: 0;
+  gap: 6px;
+}
+.rawg-result-body strong,
+.rawg-result-body small,
+.rawg-result-body em {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rawg-result-body strong {
+  font-size: 14px;
+}
+.rawg-result-body small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.rawg-result-body em {
+  color: var(--accent-2);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .rawg-search-row,
+  .rawg-result-grid,
+  .rawg-result-card {
+    grid-template-columns: 1fr;
+  }
+  .rawg-result-cover {
+    min-height: 160px;
+  }
+}
+
