@@ -4220,3 +4220,135 @@ h1 span {
     text-align: center;
   }
 }
+
+/* v1.0.6 - Updates Center Upgrade */
+.updatesPageV106 {
+  padding: 18px 18px 56px;
+  background:
+    radial-gradient(circle at 78% 0%, rgba(168, 85, 247, 0.22), transparent 34%),
+    radial-gradient(circle at 18% 0%, rgba(34, 211, 238, 0.17), transparent 32%),
+    linear-gradient(180deg, #05070d 0%, #07101f 62%, #05070d 100%);
+}
+
+.updatesShowcaseHero {
+  position: relative;
+  width: min(1380px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: stretch;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 30px;
+  background:
+    linear-gradient(110deg, rgba(5, 10, 20, 0.95), rgba(15, 23, 42, 0.72)),
+    radial-gradient(circle at 74% 35%, rgba(168, 85, 247, 0.32), transparent 30%),
+    radial-gradient(circle at 40% 30%, rgba(34, 211, 238, 0.18), transparent 26%);
+  padding: 38px;
+  box-shadow: 0 30px 100px rgba(0,0,0,0.34);
+  overflow: hidden;
+}
+
+.updatesShowcaseHero::after {
+  content: "Updates";
+  position: absolute;
+  right: -18px;
+  bottom: -26px;
+  font-size: clamp(76px, 14vw, 190px);
+  font-weight: 1000;
+  letter-spacing: -0.09em;
+  color: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+
+.updatesShowcaseText {
+  position: relative;
+  z-index: 2;
+}
+
+.updatesShowcaseText h1 {
+  margin: 12px 0;
+  max-width: 820px;
+  font-size: clamp(46px, 7vw, 84px);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+.updatesShowcaseText h1 span {
+  display: block;
+  background: linear-gradient(90deg, #c084fc, #67e8f9, #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.updatesShowcaseText p:not(.eyebrow) {
+  max-width: 720px;
+  color: #cbd5e1;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.updatesHeroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.updatesHeroActions a {
+  border-radius: 16px;
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+  padding: 14px 18px;
+  font-weight: 1000;
+}
+
+.updatesHeroActions .ghost {
+  background: rgba(255,255,255,0.075);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.updatesHeroStats {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 14px;
+}
+
+.updatesHeroStats div {
+  border-radius: 20px;
+  background: rgba(255,255,255,0.075);
+  border: 1px solid rgba(255,255
+rm -f GUNCELLEMELER/PLANLANANLAR/v1.0.6.md
+
+cat > GUNCELLEMELER/TAMAMLANANLAR/v1.0.6.md <<'EOF'
+# v1.0.6 - Güncelleme Merkezi Geliştirme
+
+## Durum
+
+Tamamlandı.
+
+## Eklenenler
+
+- /updates sayfası daha profesyonel hale getirildi
+- Güncelleme merkezi hero alanı yenilendi
+- Tamamlanan sürüm istatistikleri eklendi
+- Sıradaki plan kartı eklendi
+- v4.0.0 ana hedef kartı güçlendirildi
+- Sürüm zaman çizelgesi yenilendi
+- Güncelleme maddeleri rozetli hale getirildi
+- Planlanan sürümler ayrı roadmap kartlarıyla gösterildi
+- Mobil güncelleme görünümü iyileştirildi
+- Public iç sayfa header yapısı korundu
+
+## Eklenmeyenler
+
+- Supabase bağlantısı
+- Admin panel
+- Kayıt / giriş
+- YouTube API
+- RAWG API
+
+## Supabase Run
+
+Gerekli değil.

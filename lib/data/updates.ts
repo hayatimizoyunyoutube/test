@@ -95,13 +95,7 @@ export const completedUpdates: UpdateNote[] = [
     title: "Public Beta Fix 1",
     status: "completed",
     summary: "v1.0.0 sonrası public arayüz, mobil düzen ve link akışı temizlendi.",
-    items: [
-      "Site sürümü kod içi config dosyasına taşındı",
-      "Health endpoint sürüm bilgisi güncellendi",
-      "Profesyonel 404 sayfası eklendi",
-      "Mobil ve tablet görünüm cilası yapıldı",
-      "Kart hizaları ve buton davranışları iyileştirildi"
-    ],
+    items: ["Config sürüm dosyası", "Health endpoint güncellemesi", "Profesyonel 404 sayfası"],
     supabaseRun: "Gerekli değil"
   },
   {
@@ -109,13 +103,7 @@ export const completedUpdates: UpdateNote[] = [
     title: "Seri Kartları Geliştirme",
     status: "completed",
     summary: "Seri kartları daha profesyonel, okunabilir ve mobil uyumlu hale getirildi.",
-    items: [
-      "Premium seri kart tasarımı",
-      "Güçlendirilmiş ilerleme alanı",
-      "Detaya git aksiyonu yenilendi",
-      "Kart hover efektleri iyileştirildi",
-      "Mobil seri kart düzeni düzeltildi"
-    ],
+    items: ["Premium seri kart tasarımı", "Güçlendirilmiş ilerleme alanı", "Detay aksiyonları"],
     supabaseRun: "Gerekli değil"
   },
   {
@@ -123,13 +111,7 @@ export const completedUpdates: UpdateNote[] = [
     title: "Profesyonel Ana Sayfa Vitrini",
     status: "completed",
     summary: "Ana sayfa daha sinematik ve YouTube arşiv sitesi hissine yakın hale getirildi.",
-    items: [
-      "Kompakt üst header",
-      "Büyük görselli hero/banner",
-      "Devam Eden Seriler bölümü",
-      "Son Eklenen Videolar bölümü",
-      "Deneyim ve istatistik kartları"
-    ],
+    items: ["Kompakt üst header", "Büyük hero/banner", "Son eklenen videolar", "Deneyim kartları"],
     supabaseRun: "Gerekli değil"
   },
   {
@@ -137,13 +119,7 @@ export const completedUpdates: UpdateNote[] = [
     title: "Kategori Deneyimi Geliştirme",
     status: "completed",
     summary: "Kategori sayfası daha profesyonel vitrin ve keşif deneyimine taşındı.",
-    items: [
-      "Kategori hero alanı yenilendi",
-      "Kategori kartları premium hale getirildi",
-      "Kategori istatistikleri eklendi",
-      "Bağlı seri önizlemeleri güçlendirildi",
-      "Mobil kategori görünümü iyileştirildi"
-    ],
+    items: ["Kategori hero alanı", "Premium kategori kartları", "Kategori istatistikleri"],
     supabaseRun: "Gerekli değil"
   },
   {
@@ -151,99 +127,58 @@ export const completedUpdates: UpdateNote[] = [
     title: "Kanal Deneyimi Geliştirme",
     status: "completed",
     summary: "Kanal sayfası daha profesyonel arşiv ve kanal vitrini görünümüne taşındı.",
-    items: [
-      "Kanal hero alanı yenilendi",
-      "Kanal kartları premium hale getirildi",
-      "Kanal istatistikleri eklendi",
-      "Kanala bağlı seri önizlemeleri güçlendirildi",
-      "Mobil kanal görünümü iyileştirildi"
-    ],
+    items: ["Kanal hero alanı", "Premium kanal kartları", "Kanal istatistikleri"],
     supabaseRun: "Gerekli değil"
   },
   {
-    version: "v1.0.2",
-    title: "Seri Kartları Geliştirme",
+    version: "v1.0.6",
+    title: "Güncelleme Merkezi Geliştirme",
     status: "completed",
-    summary: "Seri kartları daha profesyonel, okunabilir ve mobil uyumlu hale getirildi.",
+    summary: "Güncelleme merkezi daha profesyonel, okunabilir ve sürüm akışı odaklı hale getirildi.",
     items: [
-      "Premium seri kart tasarımı",
-      "Güçlendirilmiş ilerleme alanı",
-      "Detaya git aksiyonu yenilendi",
-      "Kart hover efektleri iyileştirildi",
-      "Mobil seri kart düzeni düzeltildi"
-    ],
-    supabaseRun: "Gerekli değil"
-  },
-  {
-    version: "v1.0.3",
-    title: "Profesyonel Ana Sayfa Vitrini",
-    status: "completed",
-    summary: "Ana sayfa daha sinematik ve YouTube arşiv sitesi hissine yakın hale getirildi.",
-    items: [
-      "Kompakt üst header",
-      "Büyük görselli hero/banner",
-      "Devam Eden Seriler bölümü",
-      "Son Eklenen Videolar bölümü",
-      "Deneyim ve istatistik kartları"
-    ],
-    supabaseRun: "Gerekli değil"
-  },
-  {
-    version: "v1.0.4",
-    title: "Kategori Deneyimi Geliştirme",
-    status: "completed",
-    summary: "Kategori sayfası daha profesyonel vitrin ve keşif deneyimine taşındı.",
-    items: [
-      "Kategori hero alanı yenilendi",
-      "Kategori kartları premium hale getirildi",
-      "Kategori istatistikleri eklendi",
-      "Bağlı seri önizlemeleri güçlendirildi",
-      "Mobil kategori görünümü iyileştirildi"
-    ],
-    supabaseRun: "Gerekli değil"
-  },
-  {
-    version: "v1.0.5",
-    title: "Kanal Deneyimi Geliştirme",
-    status: "completed",
-    summary: "Kanal sayfası daha profesyonel arşiv ve kanal vitrini görünümüne taşındı.",
-    items: [
-      "Kanal hero alanı yenilendi",
-      "Kanal kartları premium hale getirildi",
-      "Kanal istatistikleri eklendi",
-      "Kanala bağlı seri önizlemeleri güçlendirildi",
-      "Mobil kanal görünümü iyileştirildi"
+      "Premium güncelleme hero alanı",
+      "Tamamlanan sürüm istatistikleri",
+      "Sürüm zaman çizelgesi",
+      "Planlanan sürüm kartları",
+      "v4.0.0 hedef alanı güçlendirildi",
+      "Mobil güncelleme görünümü iyileştirildi"
     ],
     supabaseRun: "Gerekli değil"
   }
 ];
 
 export const plannedUpdates: UpdateNote[] = [
-
-
   {
-    version: "v1.0.4",
-    title: "Kanal Deneyimi Geliştirme",
+    version: "v1.0.7",
+    title: "Mobil Public Deneyim",
     status: "planned",
-    summary: "Kanal sayfası ve kanal kartları geliştirilecek.",
-    items: ["Kanal detay görünümü", "Kanala bağlı seriler", "Kanal kart cilası"],
+    summary: "Public sayfaların mobil deneyimi daha da güçlendirilecek.",
+    items: ["Mobil menü", "Kartların mobil düzeni", "Hero alanı mobil düzeni"],
     supabaseRun: "Gerekli değil"
   },
   {
-    version: "v1.0.5",
-    title: "SEO Başlangıcı",
+    version: "v1.0.8",
+    title: "SEO ve Performans Hazırlığı",
     status: "planned",
-    summary: "Metadata, başlık ve açıklama yapıları düzenlenecek.",
-    items: ["Sayfa başlıkları", "Açıklama metinleri", "Open Graph hazırlığı"],
+    summary: "Sayfa başlıkları, açıklamalar ve performans temizlikleri yapılacak.",
+    items: ["Metadata düzeni", "Open Graph hazırlığı", "Sayfa başlıkları"],
     supabaseRun: "Gerekli değil"
   },
   {
-    version: "v1.0.6",
-    title: "Güncelleme Merkezi Geliştirme",
+    version: "v1.0.9",
+    title: "v1.1.0 Öncesi Stabilite",
     status: "planned",
-    summary: "Güncelleme merkezi daha profesyonel, filtreli ve okunabilir hale getirilecek.",
-    items: ["Sürüm akışı cilası", "Planlananlar düzeni", "Mobil güncelleme görünümü"],
+    summary: "v1.0.x public seri son kontrolleri ve stabilite düzeltmeleri yapılacak.",
+    items: ["Route kontrolleri", "Link kontrolleri", "Mobil/tablet son düzeltmeler"],
     supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.1.0",
+    title: "Supabase Public Veri Başlangıcı",
+    status: "planned",
+    summary: "Public arşiv verileri Supabase üzerinden okunmaya başlayacak.",
+    items: ["İlk schema.sql", "Public veri okuma", "Demo verilerin tabloya taşınması"],
+    supabaseRun: "Gerekli olacak"
   },
   {
     version: "v4.0.0",
