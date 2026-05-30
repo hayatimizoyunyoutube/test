@@ -1,11 +1,11 @@
 # Sürüm Bilgisi
 
-Mevcut sürüm: v0.0.5
+Mevcut sürüm: v0.0.6
 
 Ana açılış hedefi: v4.0.0
 
 Kural: Her şey küçük ve kontrollü sürümlerle eklenecek.
 
-## v0.0.5
+## v0.0.6
 
-Public seri detay taslağı eklendi. Veriler şimdilik demo olarak kullanılıyor.
+Public seriler sayfasına arama ve filtreleme taslağı eklendi. Veriler şimdilik demo olarak kullanılıyor.
