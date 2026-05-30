@@ -3431,3 +3431,38 @@ h1 span {
     display: grid;
   }
 }
+
+/* v1.0.3 small fix - Shared public header on inner pages */
+.sharedPublicHeader {
+  margin-bottom: 22px;
+}
+
+.seriesPage .sharedPublicHeader,
+.categoriesPage .sharedPublicHeader,
+.channelsPage .sharedPublicHeader,
+.updatesPage .sharedPublicHeader,
+.seriesDetailPage .sharedPublicHeader {
+  width: min(1240px, 100%);
+}
+
+.sharedPublicHeader .cinemaVersion {
+  white-space: nowrap;
+}
+
+@media (max-width: 1180px) {
+  .sharedPublicHeader {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .sharedPublicHeader .cinemaSearch {
+    grid-template-columns: auto 1fr;
+  }
+
+  .sharedPublicHeader .cinemaSearch button {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}

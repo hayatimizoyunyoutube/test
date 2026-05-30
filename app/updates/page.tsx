@@ -1,4 +1,5 @@
 import { allUpdates, completedUpdates, plannedUpdates, type UpdateNote } from "@/lib/data/updates";
+import { PublicSiteHeader } from "@/components/public-site-header";
 
 function statusLabel(status: UpdateNote["status"]) {
   if (status === "completed") return "Tamamlandı";
@@ -15,6 +16,7 @@ function statusClass(status: UpdateNote["status"]) {
 export default function UpdatesPage() {
   return (
     <main className="updatesPage updatesPageV009">
+      <PublicSiteHeader active="updates" />
       <header className="updatesHero updatesHeroV009">
         <div>
           <a href="/" className="backLink">← Ana sayfaya dön</a>

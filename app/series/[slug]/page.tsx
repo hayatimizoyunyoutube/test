@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { PublicSiteHeader } from "@/components/public-site-header";
 import {
   archiveSeries,
   getDemoEpisodes,
@@ -44,6 +45,7 @@ export default function SeriesDetailPage({ params }: SeriesDetailPageProps) {
 
   return (
     <main className="seriesDetailPage">
+      <PublicSiteHeader active="series" />
       <header className="seriesDetailHero">
         <div className="detailHeroText">
           <a href="/series" className="backLink">← Serilere dön</a>

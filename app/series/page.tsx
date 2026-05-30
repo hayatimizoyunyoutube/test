@@ -1,4 +1,5 @@
 import { archiveSeries, statusLabels, type ArchiveSeriesStatus } from "@/lib/data/series";
+import { PublicSiteHeader } from "@/components/public-site-header";
 
 type SeriesPageProps = {
   searchParams?: {
@@ -71,6 +72,7 @@ export default function SeriesPage({ searchParams }: SeriesPageProps) {
 
   return (
     <main className="seriesPage seriesPageV102">
+      <PublicSiteHeader active="series" />
       <header className="seriesHero seriesHeroV102">
         <div>
           <a href="/" className="backLink">← Ana sayfaya dön</a>

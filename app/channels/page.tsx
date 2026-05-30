@@ -1,4 +1,5 @@
 import { archiveChannels, getChannelSeries } from "@/lib/data/channels";
+import { PublicSiteHeader } from "@/components/public-site-header";
 
 export default function ChannelsPage() {
   const totalLinkedSeries = archiveChannels.reduce(
@@ -8,6 +9,7 @@ export default function ChannelsPage() {
 
   return (
     <main className="channelsPage">
+      <PublicSiteHeader active="channels" />
       <header className="channelsHero">
         <div>
           <a href="/" className="backLink">← Ana sayfaya dön</a>

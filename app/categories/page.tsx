@@ -1,4 +1,5 @@
 import { archiveCategories, getCategorySeries } from "@/lib/data/categories";
+import { PublicSiteHeader } from "@/components/public-site-header";
 
 export default function CategoriesPage() {
   const totalLinkedSeries = archiveCategories.reduce(
@@ -8,6 +9,7 @@ export default function CategoriesPage() {
 
   return (
     <main className="categoriesPage">
+      <PublicSiteHeader active="categories" />
       <header className="categoriesHero">
         <div>
           <a href="/" className="backLink">← Ana sayfaya dön</a>
