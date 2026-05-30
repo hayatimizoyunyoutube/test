@@ -1,24 +1,23 @@
 # Hayatımız Oyun - YouTube Arşiv Video Sitesi
 
-Mevcut sürüm: v1.0.0
+Mevcut sürüm: v1.0.1
 
 Ana yayın hedefi: v4.0.0
 
-## v1.0.0 Public Arşiv Beta
+## v1.0.1 Public Beta Fix 1
 
-Bu sürümde public arşiv deneyimi beta seviyesine getirildi.
+Bu sürümde v1.0.0 sonrası public beta hataları ve küçük arayüz problemleri düzeltildi.
 
-## Eklenenler
+## Mevcut public alanlar
 
-- Public ana sayfa beta görünümü
-- Seriler sayfası
-- Kategoriler sayfası
-- Kanallar sayfası
+- Ana sayfa
+- Seriler
 - Seri detay sayfası
+- Kategoriler
+- Kanallar
 - Güncelleme merkezi
-- Arama ve filtreleme taslağı
-- Mobil arayüz iyileştirmeleri
-- Public arşiv istatistikleri
+- Health endpoint
+- Profesyonel 404 sayfası
 
 ## Henüz yok
 
@@ -27,5 +26,3 @@ Bu sürümde public arşiv deneyimi beta seviyesine getirildi.
 - Admin panel
 - YouTube API
 - RAWG API
-
-Bu özellikler ileriki sürümlerde kontrollü şekilde eklenecek.

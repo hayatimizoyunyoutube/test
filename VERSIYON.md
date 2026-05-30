@@ -1,11 +1,11 @@
 # Sürüm Bilgisi
 
-Mevcut sürüm: v1.0.0
+Mevcut sürüm: v1.0.1
 
 Ana açılış hedefi: v4.0.0
 
 Kural: Her şey küçük ve kontrollü sürümlerle eklenecek.
 
-## v1.0.0
+## v1.0.1
 
-Public Arşiv Beta sürümü tamamlandı. Ana sayfa beta arşiv görünümüne yükseltildi ve public kullanıcı deneyimi toparlandı.
+Public Beta Fix 1 tamamlandı. Sürüm config dosyası eklendi, health endpoint güncellendi, profesyonel 404 sayfası ve mobil/tablet cila düzeltmeleri yapıldı.

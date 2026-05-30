@@ -1,8 +1,9 @@
 import { archiveSeries } from "@/lib/data/series";
 import { archiveCategories } from "@/lib/data/categories";
 import { archiveChannels } from "@/lib/data/channels";
+import { siteConfig } from "@/lib/config/site";
 
-const version = process.env.NEXT_PUBLIC_SITE_VERSION || "v1.0.0";
+const version = siteConfig.version;
 
 const completedCount = archiveSeries.filter((item) => item.status === "completed").length;
 const activeCount = archiveSeries.filter((item) => item.status === "active").length;

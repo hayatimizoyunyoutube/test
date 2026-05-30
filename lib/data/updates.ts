@@ -87,25 +87,26 @@ export const completedUpdates: UpdateNote[] = [
     title: "Public Arşiv Beta",
     status: "completed",
     summary: "Public kullanıcı için ilk beta arşiv görünümü tamamlandı.",
+    items: ["Ana sayfa beta görünümü", "Arşiv istatistikleri", "Öne çıkan seri vitrini", "Keşif alanları"],
+    supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.1",
+    title: "Public Beta Fix 1",
+    status: "completed",
+    summary: "v1.0.0 sonrası public arayüz, mobil düzen ve link akışı temizlendi.",
     items: [
-      "Ana sayfa beta görünümü",
-      "Arşiv istatistikleri",
-      "Öne çıkan seri vitrini",
-      "Keşif alanları"
+      "Site sürümü kod içi config dosyasına taşındı",
+      "Health endpoint sürüm bilgisi güncellendi",
+      "Profesyonel 404 sayfası eklendi",
+      "Mobil ve tablet görünüm cilası yapıldı",
+      "Kart hizaları ve buton davranışları iyileştirildi"
     ],
     supabaseRun: "Gerekli değil"
   }
 ];
 
 export const plannedUpdates: UpdateNote[] = [
-  {
-    version: "v1.0.1",
-    title: "Public Beta Fix 1",
-    status: "planned",
-    summary: "v1.0.0 sonrası küçük hata ve mobil düzeltmeler yapılacak.",
-    items: ["Mobil/tablet düzeltmeleri", "Menü ve link kontrolleri", "Kart hizalama"],
-    supabaseRun: "Gerekli değil"
-  },
   {
     version: "v1.0.2",
     title: "Seri Kartları Geliştirme",
@@ -128,6 +129,14 @@ export const plannedUpdates: UpdateNote[] = [
     status: "planned",
     summary: "Kanal sayfası ve kanal kartları geliştirilecek.",
     items: ["Kanal detay görünümü", "Kanala bağlı seriler", "Kanal kart cilası"],
+    supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.5",
+    title: "SEO Başlangıcı",
+    status: "planned",
+    summary: "Metadata, başlık ve açıklama yapıları düzenlenecek.",
+    items: ["Sayfa başlıkları", "Açıklama metinleri", "Open Graph hazırlığı"],
     supabaseRun: "Gerekli değil"
   },
   {
