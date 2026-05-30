@@ -1,7 +1,19 @@
 export const siteConfig = {
   name: "Hayatımız Oyun",
-  description: "YouTube oyun serileri arşiv video sitesi",
-  version: "v1.0.7",
+  description: "Hayatımız Oyun YouTube oyun serileri arşiv video sitesi. Tamamlanan, devam eden ve yakında gelecek oyun serilerini tek merkezde keşfet.",
+  version: "v1.0.8",
   targetVersion: "v4.0.0",
-  phase: "Mobil Public Deneyim"
+  phase: "SEO ve Performans Hazırlığı",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://hayatimiz-oyun.vercel.app",
+  locale: "tr_TR",
+  keywords: [
+    "Hayatımız Oyun",
+    "YouTube arşiv",
+    "oyun serileri",
+    "oyun videoları",
+    "playlist arşivi",
+    "tamamlanan seriler",
+    "devam eden seriler",
+    "oyun kategorileri"
+  ]
 };

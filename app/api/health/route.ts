@@ -8,6 +8,7 @@ export async function GET() {
     version: siteConfig.version,
     targetVersion: siteConfig.targetVersion,
     phase: siteConfig.phase,
-    status: "mobile-public-experience"
+    status: "seo-performance-ready",
+    routes: ["/", "/series", "/categories", "/channels", "/updates", "/robots.txt", "/sitemap.xml"]
   });
 }

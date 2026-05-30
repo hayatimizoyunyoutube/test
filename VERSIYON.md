@@ -1,11 +1,11 @@
 # Sürüm Bilgisi
 
-Mevcut sürüm: v1.0.7
+Mevcut sürüm: v1.0.8
 
 Ana açılış hedefi: v4.0.0
 
 Kural: Her şey küçük ve kontrollü sürümlerle eklenecek.
 
-## v1.0.7
+## v1.0.8
 
-Mobil Public Deneyim tamamlandı. Public sayfalara global mobil alt menü eklendi ve küçük ekran deneyimi güçlendirildi.
+SEO ve performans hazırlığı tamamlandı. Metadata, Open Graph, robots.txt, sitemap.xml, manifest, icon ve health endpoint güncellendi.

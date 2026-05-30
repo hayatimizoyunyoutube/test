@@ -1,12 +1,23 @@
 # Hayatımız Oyun - YouTube Arşiv Video Sitesi
 
-Mevcut sürüm: v1.0.7
+Mevcut sürüm: v1.0.8
 
 Ana yayın hedefi: v4.0.0
 
-## v1.0.7 Mobil Public Deneyim
+## v1.0.8 SEO ve Performans Hazırlığı
 
-Bu sürümde public sayfaların mobil deneyimi güçlendirildi.
+Bu sürümde public site Google/Vercel/SEO hazırlığına geçirildi.
+
+## Eklenenler
+
+- Global metadata
+- Open Graph ve Twitter kartları
+- robots.txt
+- sitemap.xml
+- site.webmanifest
+- SVG icon
+- OG paylaşım görseli
+- Health endpoint v1.0.8 bilgisi
 
 ## Mevcut public alanlar
 
@@ -18,7 +29,8 @@ Bu sürümde public sayfaların mobil deneyimi güçlendirildi.
 - Güncelleme merkezi
 - Health endpoint
 - Profesyonel 404 sayfası
-- Global mobil alt menü
+- robots.txt
+- sitemap.xml
 
 ## Henüz yok
 
@@ -27,7 +39,3 @@ Bu sürümde public sayfaların mobil deneyimi güçlendirildi.
 - Admin panel
 - YouTube API
 - RAWG API
-
-## Supabase Run
-
-Gerekli değil.
