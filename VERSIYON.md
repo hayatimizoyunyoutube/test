@@ -1,13 +1,11 @@
 # Sürüm Bilgisi
 
-Mevcut sürüm: **v1.0.6**
+Mevcut sürüm: v1.0.7
 
-Ana açılış hedefi: **v4.0.0**
+Ana açılış hedefi: v4.0.0
 
-## v1.0.6
+Kural: Her şey küçük ve kontrollü sürümlerle eklenecek.
 
-Güncelleme merkezi geliştirildi. `/updates` sayfası daha profesyonel, okunabilir ve sürüm akışı odaklı hale getirildi.
+## v1.0.7
 
-## Supabase Run
-
-Gerekli değil.
+Mobil Public Deneyim tamamlandı. Public sayfalara global mobil alt menü eklendi ve küçük ekran deneyimi güçlendirildi.

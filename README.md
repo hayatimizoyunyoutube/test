@@ -1,12 +1,12 @@
 # Hayatımız Oyun - YouTube Arşiv Video Sitesi
 
-Mevcut sürüm: **v1.0.6**
+Mevcut sürüm: v1.0.7
 
-Ana yayın hedefi: **v4.0.0**
+Ana yayın hedefi: v4.0.0
 
-## v1.0.6 Güncelleme Merkezi Geliştirme - ZIP Fix
+## v1.0.7 Mobil Public Deneyim
 
-Bu paket telefondan kullanımı kolay olsun diye ZIP olarak hazırlandı.
+Bu sürümde public sayfaların mobil deneyimi güçlendirildi.
 
 ## Mevcut public alanlar
 
@@ -18,6 +18,7 @@ Bu paket telefondan kullanımı kolay olsun diye ZIP olarak hazırlandı.
 - Güncelleme merkezi
 - Health endpoint
 - Profesyonel 404 sayfası
+- Global mobil alt menü
 
 ## Henüz yok
 
@@ -26,28 +27,6 @@ Bu paket telefondan kullanımı kolay olsun diye ZIP olarak hazırlandı.
 - Admin panel
 - YouTube API
 - RAWG API
-
-## Kurulum
-
-```bash
-npm install
-npm run build
-npm run dev
-```
-
-## GitHub gönderme
-
-```bash
-git add .
-git commit -m "v1.0.6 guncelleme merkezi zip fix"
-git push origin main
-```
-
-Gerekirse:
-
-```bash
-git push origin main --force
-```
 
 ## Supabase Run
 

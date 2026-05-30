@@ -8,6 +8,6 @@ export async function GET() {
     version: siteConfig.version,
     targetVersion: siteConfig.targetVersion,
     phase: siteConfig.phase,
-    status: "public-updates-center"
+    status: "mobile-public-experience"
   });
 }

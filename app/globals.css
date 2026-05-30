@@ -166,3 +166,298 @@ button, input { font: inherit; }
   .tagList { display: grid; }
   .notFoundCard { padding: 24px; }
 }
+
+/* v1.0.7 - Mobile Public Experience */
+.mobileBottomDock {
+  display: none;
+}
+
+@media (max-width: 820px) {
+  body {
+    padding-bottom: 74px;
+  }
+
+  .mobileBottomDock {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 80;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 22px;
+    background: rgba(5, 10, 18, 0.92);
+    backdrop-filter: blur(18px);
+    padding: 8px;
+    box-shadow: 0 18px 70px rgba(0,0,0,0.42);
+  }
+
+  .mobileBottomDock a {
+    display: grid;
+    place-items: center;
+    min-height: 42px;
+    border-radius: 15px;
+    color: #cbd5e1;
+    font-size: 11px;
+    font-weight: 1000;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .mobileBottomDock a:hover,
+  .mobileBottomDock a:focus {
+    background: linear-gradient(90deg, rgba(239,68,68,0.78), rgba(124,58,237,0.78));
+    color: #ffffff;
+  }
+
+  .cinemaHeader,
+  .innerCinemaHeader {
+    position: sticky;
+    top: 8px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 18px;
+    margin-bottom: 14px;
+  }
+
+  .cinemaBrand {
+    padding: 6px;
+  }
+
+  .cinemaBrandMark {
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+  }
+
+  .cinemaBrand strong {
+    font-size: 15px;
+  }
+
+  .cinemaBrand small {
+    font-size: 11px;
+  }
+
+  .cinemaNav {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 2px 7px;
+    scrollbar-width: none;
+  }
+
+  .cinemaNav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cinemaNav a {
+    flex: 0 0 auto;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.05);
+    font-size: 12px;
+  }
+
+  .cinemaSearch {
+    grid-template-columns: auto 1fr;
+    padding: 12px;
+    border-radius: 17px;
+  }
+
+  .cinemaSearch button {
+    grid-column: 1 / -1;
+    min-height: 44px;
+    width: 100%;
+  }
+
+  .cinemaHero,
+  .categoryShowcaseHero,
+  .channelShowcaseHero,
+  .updatesShowcaseHero,
+  .seriesHero,
+  .seriesDetailHero {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .cinemaHeroActions,
+  .categoryHeroActions,
+  .channelHeroActions,
+  .updatesHeroActions,
+  .detailActions,
+  .premiumSeriesActions,
+  .categoryShowcaseActions,
+  .channelShowcaseActions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .cinemaHeroActions a,
+  .categoryHeroActions a,
+  .channelHeroActions a,
+  .updatesHeroActions a,
+  .detailActions a,
+  .premiumSeriesActions a,
+  .categoryShowcaseActions a,
+  .channelShowcaseActions a {
+    min-height: 46px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+
+  .cinemaHero h1,
+  .categoryShowcaseText h1,
+  .channelShowcaseText h1,
+  .updatesShowcaseText h1,
+  .seriesHero h1,
+  .detailHeroText h1 {
+    font-size: clamp(40px, 14vw, 66px);
+    line-height: 0.92;
+  }
+
+  .cinemaHero p:not(.cinemaKicker),
+  .categoryShowcaseText p:not(.eyebrow),
+  .channelShowcaseText p:not(.eyebrow),
+  .updatesShowcaseText p:not(.eyebrow),
+  .seriesHero p:not(.eyebrow),
+  .detailHeroText p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .continueRail,
+  .videoGrid,
+  .cinemaInfoGrid,
+  .statusColumns,
+  .seriesCards,
+  .categoryShowcaseGrid,
+  .channelShowcaseGrid,
+  .updateDashboardGrid,
+  .plannedRoadmapGrid,
+  .relatedSeriesGrid,
+  .detailStatsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .continueCard,
+  .premiumSeriesCard,
+  .categoryShowcaseCard,
+  .channelShowcaseCard,
+  .episodeCard,
+  .premiumUpdateRow {
+    grid-template-columns: 1fr;
+  }
+
+  .continuePoster,
+  .premiumPoster,
+  .categoryShowcasePoster,
+  .channelShowcasePoster,
+  .videoThumb,
+  .detailPoster {
+    min-height: 150px;
+  }
+
+  .cinemaSectionHead,
+  .categorySpotlightHead,
+  .channelSpotlightHead,
+  .updateTimelineHead,
+  .seriesGroupHead,
+  .episodeSectionHead {
+    display: grid;
+    gap: 8px;
+  }
+
+  .filterGroups,
+  .filterGroup {
+    gap: 12px;
+  }
+
+  .filterGroup div {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 7px;
+    scrollbar-width: none;
+  }
+
+  .filterGroup div::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filterGroup a {
+    flex: 0 0 auto;
+    min-height: 38px;
+    display: grid;
+    place-items: center;
+  }
+
+  .seriesSearchForm {
+    grid-template-columns: 1fr;
+  }
+
+  .seriesSearchForm button,
+  .seriesSearchForm a {
+    min-height: 48px;
+  }
+
+  .premiumUpdateIndex {
+    display: none;
+  }
+
+  .premiumUpdateTitle,
+  .plannedRoadmapCard > div,
+  .categorySeriesPreview a,
+  .channelSeriesPreview a,
+  .linkedSeries a,
+  .channelSeriesList a {
+    display: grid;
+  }
+
+  .premiumUpdateItems {
+    display: grid;
+  }
+}
+
+@media (max-width: 420px) {
+  .mobileBottomDock {
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    gap: 4px;
+    padding: 6px;
+    border-radius: 18px;
+  }
+
+  .mobileBottomDock a {
+    min-height: 40px;
+    font-size: 10px;
+    border-radius: 13px;
+  }
+
+  .cinemaHome,
+  .categoriesPageV104,
+  .channelsPageV105,
+  .updatesPageV106,
+  .seriesPage,
+  .seriesDetailPage {
+    padding: 8px;
+  }
+
+  .cinemaHero,
+  .categoryShowcaseHero,
+  .channelShowcaseHero,
+  .updatesShowcaseHero,
+  .seriesHero,
+  .seriesDetailHero,
+  .updateTimelineShell,
+  .plannedRoadmapShell,
+  .categoryShowcaseCard,
+  .channelShowcaseCard,
+  .premiumSeriesCard {
+    padding: 16px;
+  }
+}
