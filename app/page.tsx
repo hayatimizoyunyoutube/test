@@ -1,4 +1,11 @@
-const version = process.env.NEXT_PUBLIC_SITE_VERSION || "v0.0.1";
+const version = process.env.NEXT_PUBLIC_SITE_VERSION || "v0.0.8";
+
+const quickLinks = [
+  { href: "/series", label: "Seriler" },
+  { href: "/categories", label: "Kategoriler" },
+  { href: "/channels", label: "Kanallar" },
+  { href: "/updates", label: "Güncellemeler" }
+];
 
 export default function HomePage() {
   return (
@@ -14,60 +21,83 @@ export default function HomePage() {
 
         <nav className="nav">
           <a className="active" href="/">Ana Sayfa</a>
-          <a href="/series">Seriler</a>
-          <a href="/categories">Kategoriler</a>
-          <a href="/channels">Kanallar</a>
-          <a href="/updates">Güncellemeler</a>
-          <a href="#about">Arşiv Hakkında</a>
+          {quickLinks.map((link) => (
+            <a key={link.href} href={link.href}>{link.label}</a>
+          ))}
         </nav>
 
         <div className="versionBox">
           <strong>{version}</strong>
-          <span>Temiz public başlangıç</span>
+          <span>Mobil arayüz ve profesyonel butonlar</span>
         </div>
       </aside>
 
       <section className="content">
-        <header className="topbar">
-          <div className="search">Seri, oyun veya kanal ara...</div>
-          <div className="status">Public Önizleme</div>
+        <header className="mobileHeader">
+          <div className="brand compact">
+            <div className="brandIcon">▶</div>
+            <div>
+              <strong>Hayatımız Oyun</strong>
+              <span>{version}</span>
+            </div>
+          </div>
         </header>
 
-        <section className="hero">
+        <header className="topbar proTopbar">
+          <form className="homeSearch" action="/series">
+            <span>⌕</span>
+            <input name="q" placeholder="Seri, oyun veya kanal ara..." />
+            <button type="submit">Ara</button>
+          </form>
+
+          <div className="topbarActions">
+            <a href="/series">Serileri Aç</a>
+            <a href="/updates" className="soft">Gelişim Notları</a>
+          </div>
+        </header>
+
+        <section className="hero proHero">
           <div className="heroText">
             <p className="eyebrow">YOUTUBE PLAYLIST ARŞİVİ</p>
             <h1>
-              Oyun Anıları Burada <span>Arşivleniyor.</span>
+              Oyun Serilerini <span>Profesyonel Arşivde</span> Topluyoruz.
             </h1>
             <p>
-              Hayatımız Oyun YouTube serilerini düzenli, erişilebilir ve
-              profesyonel bir arşivde topluyoruz. Tamamlanan, devam eden ve
-              yakında gelecek seriler tek merkezde.
+              Hayatımız Oyun YouTube serilerini düzenli, mobil uyumlu ve
+              profesyonel bir arşiv deneyimiyle sunuyoruz. Tamamlanan, devam
+              eden ve yakında gelecek seriler tek merkezde.
             </p>
 
-            <div className="actions">
+            <div className="actions proActions">
               <a href="/series">Serileri Keşfet</a>
-              <a className="ghost" href="#about">Nasıl Çalışır?</a>
+              <a className="ghost" href="/categories">Kategorilere Bak</a>
+              <a className="ghost cyan" href="/channels">Kanalları Gör</a>
             </div>
           </div>
 
-          <div className="heroPanel">
+          <div className="heroPanel proHeroPanel">
             <div>
-              <strong>Düzenli Arşiv</strong>
-              <span>Seriler kategorilere ayrılır.</span>
+              <strong>01</strong>
+              <span>Seriler düzenli gruplara ayrılır.</span>
             </div>
             <div>
-              <strong>Kesintisiz Erişim</strong>
-              <span>YouTube playlist bağlantıları tek merkezde.</span>
+              <strong>02</strong>
+              <span>Mobilde daha rahat gezilir.</span>
             </div>
             <div>
-              <strong>Topluluk Katkısı</strong>
-              <span>Eksik seriler ileride önerilebilir.</span>
+              <strong>03</strong>
+              <span>Arama doğrudan serilere yönlendirir.</span>
             </div>
           </div>
         </section>
 
-        <section id="series" className="seriesGrid">
+        <section className="mobileQuickNav">
+          {quickLinks.map((link) => (
+            <a key={link.href} href={link.href}>{link.label}</a>
+          ))}
+        </section>
+
+        <section id="series" className="seriesGrid proSeriesGrid">
           <article className="sectionCard completed">
             <div className="sectionHead">
               <h2>Tamamlanan Seriler</h2>
@@ -79,6 +109,7 @@ export default function HomePage() {
               <div>God of War <span>Hazırlanıyor</span></div>
               <div>Red Dead Redemption 2 <span>Hazırlanıyor</span></div>
             </div>
+            <a className="cardAction" href="/series?status=completed">Tamamlananları Gör</a>
           </article>
 
           <article className="sectionCard activeSeries">
@@ -92,6 +123,7 @@ export default function HomePage() {
               <div>Baldur's Gate 3 <span>Hazırlanıyor</span></div>
               <div>Cyberpunk 2077 <span>Hazırlanıyor</span></div>
             </div>
+            <a className="cardAction" href="/series?status=active">Devam Edenleri Gör</a>
           </article>
 
           <article className="sectionCard planned">
@@ -105,16 +137,20 @@ export default function HomePage() {
               <div>GTA VI <span>Planlandı</span></div>
               <div>S.T.A.L.K.E.R. 2 <span>Yakında</span></div>
             </div>
+            <a className="cardAction" href="/series?status=planned">Planlananları Gör</a>
           </article>
         </section>
 
-        <section id="about" className="aboutBox">
-          <h2>v0.0.1 hedefi</h2>
-          <p>
-            Bu sürüm sadece sitenin temiz şekilde açıldığını kanıtlamak için
-            hazırlandı. Supabase, giriş sistemi, admin panel ve API entegrasyonları
-            sonraki sürümlerde yavaş yavaş eklenecek.
-          </p>
+        <section id="about" className="aboutBox proAbout">
+          <div>
+            <h2>v0.0.8 hedefi</h2>
+            <p>
+              Bu sürümde sitenin mobil görünümü, arama alanı ve buton düzenleri
+              profesyonel hale getirildi. Supabase, auth ve admin özellikleri
+              sonraki sürümlerde eklenecek.
+            </p>
+          </div>
+          <a href="/updates">Yol Haritasını Aç</a>
         </section>
       </section>
     </main>
