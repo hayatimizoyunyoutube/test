@@ -133,6 +133,20 @@ export const completedUpdates: UpdateNote[] = [
     supabaseRun: "Gerekli değil"
   },
   {
+    version: "v1.0.4",
+    title: "Kategori Deneyimi Geliştirme",
+    status: "completed",
+    summary: "Kategori sayfası daha profesyonel vitrin ve keşif deneyimine taşındı.",
+    items: [
+      "Kategori hero alanı yenilendi",
+      "Kategori kartları premium hale getirildi",
+      "Kategori istatistikleri eklendi",
+      "Bağlı seri önizlemeleri güçlendirildi",
+      "Mobil kategori görünümü iyileştirildi"
+    ],
+    supabaseRun: "Gerekli değil"
+  },
+  {
     version: "v1.0.2",
     title: "Seri Kartları Geliştirme",
     status: "completed",
@@ -159,19 +173,26 @@ export const completedUpdates: UpdateNote[] = [
       "Deneyim ve istatistik kartları"
     ],
     supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.4",
+    title: "Kategori Deneyimi Geliştirme",
+    status: "completed",
+    summary: "Kategori sayfası daha profesyonel vitrin ve keşif deneyimine taşındı.",
+    items: [
+      "Kategori hero alanı yenilendi",
+      "Kategori kartları premium hale getirildi",
+      "Kategori istatistikleri eklendi",
+      "Bağlı seri önizlemeleri güçlendirildi",
+      "Mobil kategori görünümü iyileştirildi"
+    ],
+    supabaseRun: "Gerekli değil"
   }
 ];
 
 export const plannedUpdates: UpdateNote[] = [
 
-  {
-    version: "v1.0.4",
-    title: "Kategori Deneyimi Geliştirme",
-    status: "planned",
-    summary: "Kategori sayfası ve keşif alanları daha profesyonel hale getirilecek.",
-    items: ["Kategori detayları", "Kategori-seri ilişkileri", "Keşif düzeni"],
-    supabaseRun: "Gerekli değil"
-  },
+
   {
     version: "v1.0.4",
     title: "Kanal Deneyimi Geliştirme",
