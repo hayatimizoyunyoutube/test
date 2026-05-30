@@ -1,15 +1,15 @@
 # Sürüm Bilgisi
 
-Mevcut sürüm: v1.0.9
+Mevcut sürüm: v1.1.0
 
 Ana açılış hedefi: v4.0.0
 
-Kural: Her şey küçük ve kontrollü sürümlerle eklenecek.
+## v1.1.0
 
-## v1.0.9
+Supabase Public Veri Başlangıcı tamamlandı.
 
-v1.1.0 Supabase geçişi öncesi public stabilite sürümü tamamlandı. /status kontrol sayfası, health route bilgileri, sitemap güncellemesi ve v1.1.0 planı hazırlandı.
+Bu sürümden itibaren demo veriler kaldırıldı. Public sayfalar gerçek Supabase tablolarından veri okumaya başlar. Supabase’de veri yoksa sahte kart gösterilmez; profesyonel boş durum ekranı gösterilir.
 
-## Sıradaki sürüm
+## Supabase Run
 
-v1.1.0 - Supabase Public Veri Başlangıcı
+Gerekli.

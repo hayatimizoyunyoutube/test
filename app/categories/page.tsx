@@ -1,41 +1,32 @@
-import { archiveCategories, getCategoryStats } from "@/lib/data/categories";
-import { archiveSeries } from "@/lib/data/series";
+import { getCategories, getSeriesList } from "@/lib/data/archive";
 import { siteConfig } from "@/lib/config/site";
 
-export default function CategoriesPage() {
-  const totalEpisodes = archiveSeries.reduce((total, series) => total + series.episodes, 0);
-  const totalLinkedSeries = archiveCategories.reduce((total, category) => total + getCategoryStats(category).series.length, 0);
+export const dynamic = "force-dynamic";
+
+export default async function CategoriesPage() {
+  const [categories, series] = await Promise.all([getCategories(), getSeriesList()]);
+  const totalEpisodes = series.reduce((total, item) => total + item.episodes, 0);
 
   return (
-    <main className="innerPage">
+    <main className="categoriesPage categoriesPageV104">
       <header className="cinemaHeader innerCinemaHeader">
         <a className="cinemaBrand" href="/"><span className="cinemaBrandMark">▶</span><span><strong>Hayatımız Oyun</strong><small>{siteConfig.version} · Kategoriler</small></span></a>
         <nav className="cinemaNav"><a href="/">Ana Sayfa</a><a href="/series">Seriler</a><a className="active" href="/categories">Kategoriler</a><a href="/channels">Kanallar</a><a href="/updates">Güncellemeler</a></nav>
         <form className="cinemaSearch" action="/series"><span>⌕</span><input name="q" placeholder="Kategori veya seri ara..." /><button type="submit">Ara</button></form>
       </header>
-      <section className="pageHero">
-        <div><a href="/" className="backLink">← Ana sayfaya dön</a><p className="eyebrow">KATEGORİ DENEYİMİ</p><h1>Oyun Arşivini <span>Kategorilere Göre Keşfet.</span></h1><p>Her kategoriye ayrı bir vitrin mantığı kazandırıyoruz. Kategori kartları daha profesyonel ve okunabilir hale getirildi.</p></div>
-        <div className="heroStats"><div><strong>{archiveCategories.length}</strong><span>Kategori</span></div><div><strong>{totalLinkedSeries}</strong><span>Bağlı Seri</span></div><div><strong>{totalEpisodes}</strong><span>Toplam Bölüm</span></div></div>
-      </section>
-      <section className="panelBox">
-        <div className="sectionHead"><p className="eyebrow">KATEGORİ VİTRİNİ</p><h2>Arşivin Ana Türleri</h2></div>
-        <div className="showcaseGrid">
-          {archiveCategories.map((category) => {
-            const stats = getCategoryStats(category);
-            return (
-              <article key={category.id} className="showcaseCard">
-                <div className="poster"><span>{category.icon}</span><small>{category.highlight}</small></div>
-                <div className="cardBody">
-                  <div className="meta"><span>{stats.series.length} seri</span><span>{stats.episodes} bölüm</span><span>{category.keywords.join(", ")}</span></div>
-                  <h3>{category.title}</h3><p>{category.longDescription}</p>
-                  <div className="infoRow"><div><span>Tamamlandı</span><strong>{stats.completed}</strong></div><div><span>Devam</span><strong>{stats.active}</strong></div><div><span>Yakında</span><strong>{stats.planned}</strong></div></div>
-                  <div className="previewList">{stats.series.length > 0 ? stats.series.slice(0, 3).map((series) => <a key={series.id} href={`/series/${series.slug}`}><strong>{series.title}</strong><span>{series.episodes} bölüm · %{series.progress}</span></a>) : <span className="muted">Bu kategori için seri yakında eklenecek.</span>}</div>
-                  <div className="cardActions"><a href={`/series?category=${encodeURIComponent(category.title)}`}>Bu Kategoriyi Aç</a><a className="soft" href="/series">Tüm Seriler</a></div>
-                </div>
-              </article>
-            );
-          })}
-        </div>
+
+      <header className="categoryShowcaseHero">
+        <div className="categoryShowcaseText"><a href="/" className="backLink">← Ana sayfaya dön</a><p className="eyebrow">v1.1.0 · SUPABASE KATEGORİLER</p><h1>Oyun Arşivini <span>Gerçek Kategorilerle Keşfet.</span></h1><p>Demo kategori kartları kaldırıldı. Bu sayfa artık Supabase archive_categories tablosundaki aktif kategorileri gösterir.</p><div className="categoryHeroActions"><a href="/series">Tüm Serileri Gör</a><a href="/channels" className="ghost">Kanallara Git</a></div></div>
+        <div className="categoryHeroStats"><div><strong>{categories.length}</strong><span>Kategori</span></div><div><strong>{series.length}</strong><span>Bağlı Seri</span></div><div><strong>{totalEpisodes}</strong><span>Toplam Bölüm</span></div></div>
+      </header>
+
+      <section className="categorySpotlight">
+        <div className="categorySpotlightHead"><div><p className="eyebrow">KATEGORİ VİTRİNİ</p><h2>Supabase Kategori Akışı</h2></div><span>Demo veri yok</span></div>
+        {categories.length === 0 ? <div className="emptyArchiveBox"><strong>Henüz kategori eklenmedi.</strong><p>Supabase archive_categories tablosuna aktif kategori eklediğinde burada görünecek.</p><a href="/status">Durumu Kontrol Et</a></div> : <div className="categoryShowcaseGrid">{categories.map((category) => {
+          const linkedSeries = series.filter((item) => item.category === category.title || item.categorySlug === category.slug);
+          const episodes = linkedSeries.reduce((total, item) => total + item.episodes, 0);
+          return <article key={category.id} className={`categoryShowcaseCard ${category.tone}`}><div className="categoryShowcasePoster"><span>{category.icon}</span><small>{category.highlight}</small></div><div className="categoryShowcaseBody"><div className="categoryTop"><span>{linkedSeries.length} seri</span><span>{episodes} bölüm</span></div><h2>{category.title}</h2><p>{category.longDescription}</p><div className="categorySeriesPreview">{linkedSeries.length > 0 ? linkedSeries.slice(0, 3).map((item) => <a key={item.id} href={`/series/${item.slug}`}><strong>{item.title}</strong><span>{item.episodes} bölüm · %{item.progress}</span></a>) : <div className="emptyCategory">Bu kategori için henüz seri yok.</div>}</div><div className="categoryShowcaseActions"><a href={`/series?category=${encodeURIComponent(category.title)}`}>Bu Kategoriyi Aç</a><a className="soft" href="/series">Tüm Seriler</a></div></div></article>;
+        })}</div>}
       </section>
     </main>
   );

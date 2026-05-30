@@ -1,37 +1,32 @@
 # Hayatımız Oyun - YouTube Arşiv Video Sitesi
 
-Mevcut sürüm: v1.0.9
+Mevcut sürüm: v1.1.0
 
 Ana yayın hedefi: v4.0.0
 
-## v1.0.9 v1.1.0 Öncesi Stabilite
+## v1.1.0 Supabase Public Veri Başlangıcı
 
-Bu sürümde Supabase public veri başlangıcına geçmeden önce public site stabil hale getirildi.
+Bu sürümde public site demo veriden çıkarılıp Supabase public veri sistemine bağlandı.
 
-## Mevcut public alanlar
+## Eklenenler
 
-- Ana sayfa
-- Seriler
-- Seri detay sayfası
-- Kategoriler
-- Kanallar
-- Güncelleme merkezi
-- Stabilite kontrol sayfası
-- Health endpoint
-- robots.txt
-- sitemap.xml
-- Profesyonel 404 sayfası
-
-## Henüz yok
-
-- Supabase bağlantısı
-- Kayıt / giriş
-- Admin panel
-- YouTube API
-- RAWG API
+- Supabase schema dosyası
+- Public kategori tablosu
+- Public kanal tablosu
+- Public seri tablosu
+- Public bölüm tablosu
+- Supabase REST veri okuma altyapısı
+- Demo veri kaldırma
+- Profesyonel boş durum ekranları
+- Supabase health/status kontrolü
 
 ## Supabase Run
 
-v1.0.9 için gerekli değil.
+Gerekli. `SUPABASE_RUN_NOTU.md` dosyasını oku.
 
-v1.1.0 sürümünde Supabase Run gerekli olacak.
+## Henüz yok
+
+- Admin panel
+- Kayıt / giriş
+- YouTube API senkronizasyonu
+- RAWG API

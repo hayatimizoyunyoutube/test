@@ -738,3 +738,58 @@ button, input { font: inherit; }
     text-align: center;
   }
 }
+
+/* v1.1.0 - Supabase public data and empty states */
+.emptyArchiveBox {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top right, rgba(14,165,233,0.14), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.035));
+  padding: 26px;
+  color: #e2e8f0;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.22);
+}
+
+.emptyArchiveBox strong {
+  display: block;
+  font-size: clamp(22px, 4vw, 34px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.emptyArchiveBox p {
+  max-width: 720px;
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+.emptyArchiveBox a {
+  display: inline-flex;
+  margin-top: 10px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #06b6d4, #7c3aed);
+  padding: 13px 16px;
+  color: #fff;
+  font-weight: 1000;
+}
+
+.wideEmptyBox {
+  width: min(1380px, 100%);
+  margin-top: 22px;
+}
+
+.episodeCard a {
+  border-radius: 14px;
+  background: linear-gradient(90deg, #ef4444, #7c3aed);
+  color: #fff;
+  padding: 12px 14px;
+  font-weight: 900;
+}
+
+.stabilityCheckGridV109 p {
+  margin: 8px 0 0;
+  color: #94a3b8;
+}

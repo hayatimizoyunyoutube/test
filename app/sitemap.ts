@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/config/site";
-import { archiveSeries } from "@/lib/data/series";
+import { getSeriesList } from "@/lib/data/archive";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const staticRoutes = ["", "/series", "/categories", "/channels", "/updates", "/status"].map((route) => ({
@@ -12,8 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : 0.8
   }));
 
-  const seriesRoutes = archiveSeries.map((series) => ({
-    url: `${siteConfig.url}/series/${series.slug}`,
+  const series = await getSeriesList();
+  const seriesRoutes = series.map((item) => ({
+    url: `${siteConfig.url}/series/${item.slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
     priority: 0.7

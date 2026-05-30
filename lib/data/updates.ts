@@ -41,22 +41,37 @@ export const completedUpdates: UpdateNote[] = [
       "v1.1.0 Supabase geçiş planı netleştirildi"
     ],
     supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.1.0",
+    title: "Supabase Public Veri Başlangıcı",
+    status: "completed",
+    summary: "Demo veriler kaldırıldı ve public sayfalar Supabase tablolarından veri okumaya başladı.",
+    items: [
+      "supabase/schema.sql eklendi",
+      "archive_categories, archive_channels, playlist_series, playlist_episodes tabloları hazırlandı",
+      "Public sayfalar Supabase REST verisiyle çalışacak hale getirildi",
+      "Demo seri/kategori/kanal kartları kaldırıldı",
+      "Veri yoksa profesyonel boş durum ekranları eklendi",
+      "Health ve status sayfaları Supabase durumunu göstermeye başladı"
+    ],
+    supabaseRun: "Gerekli"
   }
 ];
 
 export const plannedUpdates: UpdateNote[] = [
   {
-    version: "v1.1.0",
-    title: "Supabase Public Veri Başlangıcı",
+    version: "v1.1.1",
+    title: "Supabase Veri Fix 1",
     status: "planned",
-    summary: "Public arşiv verileri Supabase üzerinden okunmaya başlayacak.",
+    summary: "Supabase public veri geçişi sonrası olası boş durum, ilişki ve listeleme sorunları düzeltilecek.",
     items: [
-      "İlk schema.sql",
-      "Public veri okuma helperları",
-      "Demo seri/kategori/kanal verilerinin tabloya taşınması",
-      "Hata durumunda demo veriye düşen güvenli yapı"
+      "Supabase sorgu düzeltmeleri",
+      "Boş durum ekranlarının kontrolü",
+      "Seri detay bölüm ilişkilerinin kontrolü",
+      "Kategori/kanal ilişki filtrelerinin iyileştirilmesi"
     ],
-    supabaseRun: "Gerekli olacak"
+    supabaseRun: "Gerekli olmayabilir"
   },
   { version: "v4.0.0", title: "Ana Yayın ve Açılış Sürümü", status: "target", summary: "Hayatımız Oyun YouTube arşiv video sitesi public kullanıma açılacak.", items: ["Profesyonel public site", "Supabase veri sistemi", "Güvenli admin panel", "YouTube playlist arşivi"], supabaseRun: "Gerekli olabilir" }
 ];
