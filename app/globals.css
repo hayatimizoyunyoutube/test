@@ -1997,3 +1997,205 @@ h1 span {
     gap: 10px;
   }
 }
+
+/* v0.0.9 - Public polish and single-column update flow */
+.updatesPageV009 {
+  padding-bottom: 54px;
+}
+
+.updatesHeroV009 {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 28px 90px rgba(0,0,0,0.32);
+}
+
+.updatesIntroV009 {
+  max-width: 980px;
+}
+
+.updateFlowShell {
+  width: min(980px, 100%);
+  margin: 24px auto 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+  padding: 22px;
+  box-shadow: 0 28px 90px rgba(0,0,0,0.22);
+}
+
+.updateFlowHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.updateFlowHead h2 {
+  margin: 6px 0 0;
+  font-size: clamp(26px, 4vw, 36px);
+}
+
+.updateLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.updateLegend span {
+  border-radius: 999px;
+  padding: 8px 11px;
+  font-size: 12px;
+  font-weight: 1000;
+}
+
+.legendDone {
+  background: rgba(34, 197, 94, 0.13);
+  color: #86efac;
+}
+
+.legendPlan {
+  background: rgba(59, 130, 246, 0.13);
+  color: #93c5fd;
+}
+
+.legendTarget {
+  background: rgba(168, 85, 247, 0.16);
+  color: #d8b4fe;
+}
+
+.updateFlow {
+  display: grid;
+  gap: 14px;
+  max-height: none;
+}
+
+.updateFlowCard {
+  display: grid;
+  grid-template-columns: 118px 1fr;
+  gap: 16px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.24);
+  padding: 15px;
+  overflow: hidden;
+}
+
+.updateFlowVersion {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 104px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.07);
+}
+
+.updateFlowVersion strong {
+  font-size: 19px;
+}
+
+.updateFlowVersion span {
+  display: block;
+  margin-top: 7px;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 1000;
+}
+
+.updateFlowCard.completedUpdate .updateFlowVersion {
+  background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(20,83,45,0.42));
+}
+
+.updateFlowCard.plannedUpdate .updateFlowVersion {
+  background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(30,58,138,0.42));
+}
+
+.updateFlowCard.targetUpdate .updateFlowVersion {
+  background: linear-gradient(135deg, rgba(168,85,247,0.24), rgba(88,28,135,0.45));
+}
+
+.updateFlowTitle {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.updateFlowTitle h3 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.updateFlowTitle span {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.07);
+  color: #cbd5e1;
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 1000;
+}
+
+.updateFlowContent p {
+  margin: 8px 0 0;
+  color: #94a3b8;
+  line-height: 1.55;
+}
+
+.updateFlowContent ul {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: #cbd5e1;
+  line-height: 1.65;
+}
+
+@media (max-width: 980px) {
+  .updateFlowShell {
+    border-radius: 22px;
+    padding: 16px;
+  }
+
+  .updateFlowHead {
+    display: grid;
+  }
+
+  .updateFlowCard {
+    grid-template-columns: 1fr;
+  }
+
+  .updateFlowVersion {
+    min-height: auto;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .updateFlowVersion span {
+    margin-top: 0;
+  }
+
+  .updateFlowTitle {
+    display: grid;
+  }
+
+  .updateFlowTitle span {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 520px) {
+  .updateFlowShell {
+    padding: 12px;
+  }
+
+  .updateFlowCard {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .updateFlowContent ul {
+    padding-left: 16px;
+  }
+}

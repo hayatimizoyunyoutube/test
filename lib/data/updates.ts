@@ -15,12 +15,7 @@ export const completedUpdates: UpdateNote[] = [
     title: "Temiz Public Başlangıç",
     status: "completed",
     summary: "Sitenin temiz çalışan ilk public ana sayfası oluşturuldu.",
-    items: [
-      "Public ana sayfa",
-      "YouTube arşiv tanıtımı",
-      "Tamamlanan / Devam Eden / Yakında Gelecek alanları",
-      "/api/health endpoint"
-    ],
+    items: ["Public ana sayfa", "YouTube arşiv tanıtımı", "/api/health endpoint"],
     supabaseRun: "Gerekli değil"
   },
   {
@@ -28,12 +23,7 @@ export const completedUpdates: UpdateNote[] = [
     title: "Seriler Sayfası",
     status: "completed",
     summary: "Public /series sayfası ve demo seri kartları eklendi.",
-    items: [
-      "Tamamlanan Seriler grubu",
-      "Devam Eden Seriler grubu",
-      "Yakında Gelecek Seriler grubu",
-      "Seri kartları ve ilerleme yüzdesi"
-    ],
+    items: ["Tamamlanan seriler", "Devam eden seriler", "Yakında gelecek seriler"],
     supabaseRun: "Gerekli değil"
   },
   {
@@ -41,11 +31,7 @@ export const completedUpdates: UpdateNote[] = [
     title: "Kategoriler Sayfası",
     status: "completed",
     summary: "Public /categories sayfası ve kategori kartları eklendi.",
-    items: [
-      "Aksiyon, RPG, Macera kategorileri",
-      "Korku, Bilim Kurgu, Simülasyon kategorileri",
-      "Kategorilere bağlı demo seri listesi"
-    ],
+    items: ["Kategori kartları", "Demo seri bağlantıları", "Keşif alanı"],
     supabaseRun: "Gerekli değil"
   },
   {
@@ -53,12 +39,7 @@ export const completedUpdates: UpdateNote[] = [
     title: "Kanallar Sayfası",
     status: "completed",
     summary: "Public /channels sayfası ve demo kanal kartları eklendi.",
-    items: [
-      "Hayatımız Oyun kanalı",
-      "Hikaye Arşivi kanalı",
-      "Korku Geceleri kanalı",
-      "Yakında Gelecek kanalı"
-    ],
+    items: ["Kanal kartları", "Kanal-seri bağlantısı", "Public kanal görünümü"],
     supabaseRun: "Gerekli değil"
   },
   {
@@ -66,12 +47,7 @@ export const completedUpdates: UpdateNote[] = [
     title: "Seri Detay Taslağı",
     status: "completed",
     summary: "Public /series/[slug] detay sayfası eklendi.",
-    items: [
-      "Seri hero alanı",
-      "Demo bölüm listesi",
-      "İlerleme yüzdesi",
-      "Benzer seriler alanı"
-    ],
+    items: ["Seri hero alanı", "Demo bölüm listesi", "Benzer seriler"],
     supabaseRun: "Gerekli değil"
   },
   {
@@ -79,55 +55,66 @@ export const completedUpdates: UpdateNote[] = [
     title: "Arama ve Filtreleme Taslağı",
     status: "completed",
     summary: "Public /series sayfasına arama ve filtreleme eklendi.",
-    items: [
-      "Seri arama",
-      "Durum filtresi",
-      "Kategori filtresi",
-      "Kanal filtresi",
-      "Boş sonuç ekranı"
-    ],
+    items: ["Seri arama", "Durum filtresi", "Kategori ve kanal filtresi"],
+    supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v0.0.7",
+    title: "Güncelleme Merkezi Taslağı",
+    status: "completed",
+    summary: "Public /updates sayfası eklendi.",
+    items: ["Tamamlanan sürümler", "Planlanan sürümler", "v4.0.0 hedefi"],
+    supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v0.0.8",
+    title: "Mobil Arayüz İyileştirme",
+    status: "completed",
+    summary: "Mobil görünüm, arama alanı ve buton tasarımları profesyonelleştirildi.",
+    items: ["Mobil header", "Profesyonel arama", "Buton ve kart cilası"],
     supabaseRun: "Gerekli değil"
   }
 ];
 
 export const plannedUpdates: UpdateNote[] = [
   {
-    version: "v0.0.8",
-    title: "Mobil Arayüz İyileştirme",
-    status: "planned",
-    summary: "Public sayfaların mobil ve tablet görünümü güçlendirilecek.",
-    items: [
-      "Mobil menü düzeni",
-      "Kartların mobil hizası",
-      "Hero alanı mobil düzeni",
-      "Tablet görünüm iyileştirmesi"
-    ],
-    supabaseRun: "Gerekli değil"
-  },
-  {
-    version: "v0.0.9",
-    title: "v1.0.0 Öncesi Public Cila",
-    status: "planned",
-    summary: "v1.0.0 public beta öncesi son public arayüz temizliği yapılacak.",
-    items: [
-      "Renk ve boşluk düzeni",
-      "Kart tasarımı cilası",
-      "Link kontrolleri",
-      "Public beta hazırlığı"
-    ],
-    supabaseRun: "Gerekli değil"
-  },
-  {
     version: "v1.0.0",
     title: "Public Arşiv Beta",
     status: "planned",
-    summary: "Public kullanıcı için ilk büyük beta arşiv görünümü tamamlanacak.",
-    items: [
-      "Ana sayfa beta görünümü",
-      "Seriler, kategoriler ve kanallar deneyimi",
-      "Public arşiv akışı",
-      "Demo verilerle tam kullanıcı deneyimi"
-    ],
+    summary: "Public kullanıcı için ilk büyük beta arşiv görünümü hazırlanacak.",
+    items: ["Ana sayfa beta cilası", "Seriler/kategoriler/kanallar deneyimi", "Demo veriyle tam akış"],
+    supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.1",
+    title: "Public Beta Fix 1",
+    status: "planned",
+    summary: "v1.0.0 sonrası küçük hata ve mobil düzeltmeler yapılacak.",
+    items: ["Mobil/tablet düzeltmeleri", "Menü ve link kontrolleri", "Kart hizalama"],
+    supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.2",
+    title: "Seri Kartları Geliştirme",
+    status: "planned",
+    summary: "Seri kartları daha güçlü görsel düzene taşınacak.",
+    items: ["Kart görünümü", "İlerleme alanı", "Detay aksiyonları"],
+    supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.3",
+    title: "Kategori Deneyimi Geliştirme",
+    status: "planned",
+    summary: "Kategori sayfası ve keşif alanları daha profesyonel hale getirilecek.",
+    items: ["Kategori detayları", "Kategori-seri ilişkileri", "Keşif düzeni"],
+    supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.4",
+    title: "Kanal Deneyimi Geliştirme",
+    status: "planned",
+    summary: "Kanal sayfası ve kanal kartları geliştirilecek.",
+    items: ["Kanal detay görünümü", "Kanala bağlı seriler", "Kanal kart cilası"],
     supabaseRun: "Gerekli değil"
   },
   {
@@ -135,13 +122,9 @@ export const plannedUpdates: UpdateNote[] = [
     title: "Ana Yayın ve Açılış Sürümü",
     status: "target",
     summary: "Hayatımız Oyun YouTube arşiv video sitesi public kullanıma açılacak.",
-    items: [
-      "Profesyonel public site",
-      "Supabase veri sistemi",
-      "Kayıt / giriş sistemi",
-      "Güvenli admin panel",
-      "YouTube playlist arşivi"
-    ],
+    items: ["Profesyonel public site", "Supabase veri sistemi", "Güvenli admin panel", "YouTube playlist arşivi"],
     supabaseRun: "Gerekli olabilir"
   }
 ];
+
+export const allUpdates = [...completedUpdates, ...plannedUpdates];
