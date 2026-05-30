@@ -8,6 +8,6 @@ export async function GET() {
     version: siteConfig.version,
     targetVersion: siteConfig.targetVersion,
     phase: siteConfig.phase,
-    status: "public-beta-fix"
+    status: "public-updates-center"
   });
 }
