@@ -147,6 +147,20 @@ export const completedUpdates: UpdateNote[] = [
     supabaseRun: "Gerekli değil"
   },
   {
+    version: "v1.0.5",
+    title: "Kanal Deneyimi Geliştirme",
+    status: "completed",
+    summary: "Kanal sayfası daha profesyonel arşiv ve kanal vitrini görünümüne taşındı.",
+    items: [
+      "Kanal hero alanı yenilendi",
+      "Kanal kartları premium hale getirildi",
+      "Kanal istatistikleri eklendi",
+      "Kanala bağlı seri önizlemeleri güçlendirildi",
+      "Mobil kanal görünümü iyileştirildi"
+    ],
+    supabaseRun: "Gerekli değil"
+  },
+  {
     version: "v1.0.2",
     title: "Seri Kartları Geliştirme",
     status: "completed",
@@ -187,6 +201,20 @@ export const completedUpdates: UpdateNote[] = [
       "Mobil kategori görünümü iyileştirildi"
     ],
     supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.5",
+    title: "Kanal Deneyimi Geliştirme",
+    status: "completed",
+    summary: "Kanal sayfası daha profesyonel arşiv ve kanal vitrini görünümüne taşındı.",
+    items: [
+      "Kanal hero alanı yenilendi",
+      "Kanal kartları premium hale getirildi",
+      "Kanal istatistikleri eklendi",
+      "Kanala bağlı seri önizlemeleri güçlendirildi",
+      "Mobil kanal görünümü iyileştirildi"
+    ],
+    supabaseRun: "Gerekli değil"
   }
 ];
 
@@ -207,6 +235,14 @@ export const plannedUpdates: UpdateNote[] = [
     status: "planned",
     summary: "Metadata, başlık ve açıklama yapıları düzenlenecek.",
     items: ["Sayfa başlıkları", "Açıklama metinleri", "Open Graph hazırlığı"],
+    supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.6",
+    title: "Güncelleme Merkezi Geliştirme",
+    status: "planned",
+    summary: "Güncelleme merkezi daha profesyonel, filtreli ve okunabilir hale getirilecek.",
+    items: ["Sürüm akışı cilası", "Planlananlar düzeni", "Mobil güncelleme görünümü"],
     supabaseRun: "Gerekli değil"
   },
   {

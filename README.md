@@ -1,12 +1,12 @@
 # Hayatımız Oyun - YouTube Arşiv Video Sitesi
 
-Mevcut sürüm: v1.0.4
+Mevcut sürüm: v1.0.5
 
 Ana yayın hedefi: v4.0.0
 
-## v1.0.4 Kategori Deneyimi Geliştirme
+## v1.0.5 Kanal Deneyimi Geliştirme
 
-Bu sürümde public /categories sayfası daha profesyonel hale getirildi.
+Bu sürümde public /channels sayfası daha profesyonel hale getirildi.
 
 ## Mevcut public alanlar
 

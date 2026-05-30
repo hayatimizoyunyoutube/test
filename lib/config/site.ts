@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Hayatımız Oyun",
   description: "YouTube oyun serileri arşiv video sitesi",
-  version: "v1.0.4",
+  version: "v1.0.5",
   targetVersion: "v4.0.0",
-  phase: "Kategori Deneyimi Geliştirme"
+  phase: "Kanal Deneyimi Geliştirme"
 };

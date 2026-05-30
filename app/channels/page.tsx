@@ -1,29 +1,60 @@
-import { archiveChannels, getChannelSeries } from "@/lib/data/channels";
-import { PublicSiteHeader } from "@/components/public-site-header";
+import { archiveChannels, getChannelStats } from "@/lib/data/channels";
+import { archiveSeries } from "@/lib/data/series";
+import { siteConfig } from "@/lib/config/site";
 
 export default function ChannelsPage() {
+  const totalEpisodes = archiveSeries.reduce((total, series) => total + series.episodes, 0);
   const totalLinkedSeries = archiveChannels.reduce(
-    (total, channel) => total + getChannelSeries(channel).length,
+    (total, channel) => total + getChannelStats(channel).series.length,
     0
   );
 
   return (
-    <main className="channelsPage">
-      <PublicSiteHeader active="channels" />
-      <header className="channelsHero">
-        <div>
+    <main className="channelsPage channelsPageV105">
+      <header className="cinemaHeader innerCinemaHeader">
+        <a className="cinemaBrand" href="/">
+          <span className="cinemaBrandMark">▶</span>
+          <span>
+            <strong>Hayatımız Oyun</strong>
+            <small>{siteConfig.version} · Kanallar</small>
+          </span>
+        </a>
+
+        <nav className="cinemaNav">
+          <a href="/">Ana Sayfa</a>
+          <a href="/series">Seriler</a>
+          <a href="/categories">Kategoriler</a>
+          <a className="active" href="/channels">Kanallar</a>
+          <a href="/updates">Güncellemeler</a>
+        </nav>
+
+        <form className="cinemaSearch" action="/series">
+          <span>⌕</span>
+          <input name="q" placeholder="Kanal, seri veya oyun ara..." />
+          <button type="submit">Ara</button>
+        </form>
+      </header>
+
+      <header className="channelShowcaseHero">
+        <div className="channelShowcaseText">
           <a href="/" className="backLink">← Ana sayfaya dön</a>
-          <p className="eyebrow">v0.0.4 · KANALLAR</p>
+          <p className="eyebrow">v1.0.5 · KANAL DENEYİMİ</p>
           <h1>
-            Arşiv Kanallarını <span>Tek Merkezde Topla.</span>
+            Arşiv Kanalları Artık <span>Daha Profesyonel.</span>
           </h1>
           <p>
-            YouTube oynatma listeleri ileride kanallara göre gruplanacak. Bu
-            sürümde kanal görünümü demo verilerle hazırlanıyor.
+            Oyun serilerini kanal mantığıyla grupluyoruz. Her kanal kendi odak
+            türleri, bağlı serileri, bölüm sayısı ve arşiv durumu ile daha
+            anlaşılır hale getirildi.
           </p>
+
+          <div className="channelHeroActions">
+            <a href="/series">Tüm Serileri Gör</a>
+            <a href="/categories" className="ghost">Kategorileri Aç</a>
+          </div>
         </div>
 
-        <div className="channelStats">
+        <div className="channelHeroStats">
           <div>
             <strong>{archiveChannels.length}</strong>
             <span>Kanal</span>
@@ -33,62 +64,85 @@ export default function ChannelsPage() {
             <span>Bağlı Seri</span>
           </div>
           <div>
-            <strong>Public</strong>
-            <span>Kullanıcı görünümü</span>
+            <strong>{totalEpisodes}</strong>
+            <span>Toplam Bölüm</span>
           </div>
         </div>
       </header>
 
-      <section className="channelToolbar">
-        <div className="fakeSearch">Kanal ara... örn: Hayatımız Oyun, Korku Geceleri</div>
-        <div className="toolbarNote">Gerçek YouTube bağlantısı sonraki sürümlerde gelecek.</div>
-      </section>
+      <section className="channelSpotlight">
+        <div className="channelSpotlightHead">
+          <div>
+            <p className="eyebrow">KANAL VİTRİNİ</p>
+            <h2>Arşiv Kanalları</h2>
+          </div>
+          <span>Demo verilerle public görünüm</span>
+        </div>
 
-      <section className="channelGrid">
-        {archiveChannels.map((channel) => {
-          const linkedSeries = getChannelSeries(channel);
+        <div className="channelShowcaseGrid">
+          {archiveChannels.map((channel) => {
+            const stats = getChannelStats(channel);
 
-          return (
-            <article key={channel.id} className={`channelCard ${channel.tone}`}>
-              <div className="channelAvatar">
-                <span>{channel.title.slice(0, 2).toUpperCase()}</span>
-              </div>
-
-              <div className="channelBody">
-                <div className="channelTop">
-                  <span>{channel.handle}</span>
-                  <span>{linkedSeries.length} seri</span>
+            return (
+              <article key={channel.id} className={`channelShowcaseCard ${channel.tone}`}>
+                <div className="channelShowcasePoster">
+                  <span>{channel.icon}</span>
+                  <small>{channel.highlight}</small>
                 </div>
 
-                <h2>{channel.title}</h2>
-                <p>{channel.description}</p>
+                <div className="channelShowcaseBody">
+                  <div className="channelTop">
+                    <span>{channel.handle}</span>
+                    <span>{stats.series.length} seri</span>
+                    <span>{stats.episodes} bölüm</span>
+                  </div>
 
-                <div className="channelFocus">
-                  {channel.focus.map((focus) => (
-                    <span key={focus}>{focus}</span>
-                  ))}
+                  <h2>{channel.title}</h2>
+                  <p>{channel.longDescription}</p>
+
+                  <div className="channelFocusChips">
+                    {channel.focus.map((focus) => (
+                      <span key={focus}>{focus}</span>
+                    ))}
+                  </div>
+
+                  <div className="channelMiniStats">
+                    <div>
+                      <span>Tamamlandı</span>
+                      <strong>{stats.completed}</strong>
+                    </div>
+                    <div>
+                      <span>Devam</span>
+                      <strong>{stats.active}</strong>
+                    </div>
+                    <div>
+                      <span>Yakında</span>
+                      <strong>{stats.planned}</strong>
+                    </div>
+                  </div>
+
+                  <div className="channelSeriesPreview">
+                    {stats.series.length > 0 ? (
+                      stats.series.slice(0, 4).map((series) => (
+                        <a key={series.id} href={`/series/${series.slug}`}>
+                          <strong>{series.title}</strong>
+                          <span>{series.episodes} bölüm · %{series.progress}</span>
+                        </a>
+                      ))
+                    ) : (
+                      <div className="emptyChannel">Bu kanala bağlı seri yakında eklenecek.</div>
+                    )}
+                  </div>
+
+                  <div className="channelShowcaseActions">
+                    <a href="/series">Bu Kanalın Serilerini Gör</a>
+                    <a className="soft" href="/updates">Yol Haritası</a>
+                  </div>
                 </div>
-
-                <div className="channelSeriesList">
-                  {linkedSeries.length > 0 ? (
-                    linkedSeries.slice(0, 4).map((series) => (
-                      <a key={series.id} href={`/series/${series.slug}`}>
-                        {series.title}
-                        <span>{series.episodes} bölüm</span>
-                      </a>
-                    ))
-                  ) : (
-                    <div className="emptyChannel">Bu kanala bağlı seri yakında eklenecek.</div>
-                  )}
-                </div>
-
-                <a className="channelAction" href="/series">
-                  Serilerde gör
-                </a>
-              </div>
-            </article>
-          );
-        })}
+              </article>
+            );
+          })}
+        </div>
       </section>
     </main>
   );
