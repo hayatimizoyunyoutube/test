@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/config/site";
+
 type PublicSiteHeaderProps = {
   active?: "home" | "series" | "categories" | "channels" | "updates";
 };
@@ -12,16 +14,16 @@ const links = [
 
 export function PublicSiteHeader({ active }: PublicSiteHeaderProps) {
   return (
-    <header className="cinemaHeader sharedPublicHeader">
-      <a className="cinemaBrand" href="/">
-        <span className="cinemaBrandMark">▶</span>
+    <header className="proSharedHeader">
+      <a className="proSharedBrand" href="/">
+        <span className="proSharedLogo">▶</span>
         <span>
-          <strong>Hayatımız Oyun</strong>
+          <strong>HAYATIMIZ <b>OYUN</b></strong>
           <small>YouTube Arşiv Video Sitesi</small>
         </span>
       </a>
 
-      <nav className="cinemaNav">
+      <nav className="proSharedNav">
         {links.map((link) => (
           <a
             key={link.href}
@@ -33,13 +35,15 @@ export function PublicSiteHeader({ active }: PublicSiteHeaderProps) {
         ))}
       </nav>
 
-      <form className="cinemaSearch" action="/series">
+      <form className="proSharedSearch" action="/series">
         <span>⌕</span>
-        <input name="q" placeholder="Seri, video veya kanal ara..." />
-        <button type="submit">Ara</button>
+        <input name="q" placeholder="Seri, oyun, kanal ara..." />
       </form>
 
-      <a className="cinemaVersion" href="/updates">Yol Haritası</a>
+      <div className="proSharedActions">
+        <a href="/updates">{siteConfig.version}</a>
+        <span>●</span>
+      </div>
     </header>
   );
 }

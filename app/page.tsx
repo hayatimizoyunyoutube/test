@@ -2,6 +2,7 @@ import { archiveSeries } from "@/lib/data/series";
 import { archiveCategories } from "@/lib/data/categories";
 import { archiveChannels } from "@/lib/data/channels";
 import { siteConfig } from "@/lib/config/site";
+import { PublicSiteHeader } from "@/components/public-site-header";
 
 const completedSeries = archiveSeries.filter((item) => item.status === "completed");
 const activeSeries = archiveSeries.filter((item) => item.status === "active");
@@ -44,31 +45,7 @@ function statusText(status: string) {
 export default function HomePage() {
   return (
     <main className="cinemaHome">
-      <header className="cinemaHeader">
-        <a className="cinemaBrand" href="/">
-          <span className="cinemaBrandMark">▶</span>
-          <span>
-            <strong>Hayatımız Oyun</strong>
-            <small>YouTube Arşiv Video Sitesi</small>
-          </span>
-        </a>
-
-        <nav className="cinemaNav">
-          <a className="active" href="/">Ana Sayfa</a>
-          <a href="/series">Seriler</a>
-          <a href="/categories">Kategoriler</a>
-          <a href="/channels">Kanallar</a>
-          <a href="/updates">Güncellemeler</a>
-        </nav>
-
-        <form className="cinemaSearch" action="/series">
-          <span>⌕</span>
-          <input name="q" placeholder="Seri, video veya kanal ara..." />
-          <button type="submit">Ara</button>
-        </form>
-
-        <a className="cinemaVersion" href="/updates">{siteConfig.version}</a>
-      </header>
+      <PublicSiteHeader active="home" />
 
       <section className="cinemaHero">
         <div className="heroBackdropText">Hayatımız Oyun</div>
