@@ -17,6 +17,12 @@ function statusBadge(status: ArchiveSeriesStatus) {
   return "Yakında";
 }
 
+function statusDescription(status: ArchiveSeriesStatus) {
+  if (status === "completed") return "Arşive alınmış tamamlanan seri";
+  if (status === "active") return "Yeni bölümlerle büyüyen aktif seri";
+  return "Planlanan ve yakında başlayacak seri";
+}
+
 function normalize(value?: string) {
   return String(value || "").trim().toLocaleLowerCase("tr-TR");
 }
@@ -64,18 +70,18 @@ export default function SeriesPage({ searchParams }: SeriesPageProps) {
   });
 
   return (
-    <main className="seriesPage">
-      <header className="seriesHero">
+    <main className="seriesPage seriesPageV102">
+      <header className="seriesHero seriesHeroV102">
         <div>
           <a href="/" className="backLink">← Ana sayfaya dön</a>
-          <p className="eyebrow">v0.0.6 · ARAMA VE FİLTRELEME</p>
+          <p className="eyebrow">v1.0.2 · SERİ KARTLARI GELİŞTİRME</p>
           <h1>
-            Arşivdeki Serileri <span>Hızlıca Bul.</span>
+            Seriler Artık Daha <span>Profesyonel Kartlarla.</span>
           </h1>
           <p>
-            Serileri ada, kategoriye, kanala veya duruma göre filtrele. Bu
-            sürümde veriler demo olarak duruyor; Supabase bağlantısı ileriki
-            sürümlerde eklenecek.
+            Seri kartları daha okunabilir, daha premium ve mobilde daha rahat
+            gezilebilir hale getirildi. Detay aksiyonları ve ilerleme alanları
+            güçlendirildi.
           </p>
         </div>
 
@@ -95,7 +101,7 @@ export default function SeriesPage({ searchParams }: SeriesPageProps) {
         </div>
       </header>
 
-      <section className="seriesFilterPanel">
+      <section className="seriesFilterPanel seriesFilterPanelV102">
         <form className="seriesSearchForm" action="/series">
           <input
             name="q"
@@ -107,7 +113,7 @@ export default function SeriesPage({ searchParams }: SeriesPageProps) {
           {selectedCategory !== "all" ? <input type="hidden" name="category" value={selectedCategory} /> : null}
           {selectedChannel !== "all" ? <input type="hidden" name="channel" value={selectedChannel} /> : null}
 
-          <button type="submit">Ara</button>
+          <button type="submit">Arşivde Ara</button>
           <a href="/series">Temizle</a>
         </form>
 
@@ -162,7 +168,7 @@ export default function SeriesPage({ searchParams }: SeriesPageProps) {
         </div>
       </section>
 
-      <section className="filterSummary">
+      <section className="filterSummary filterSummaryV102">
         <strong>{filteredSeries.length} seri bulundu</strong>
         <span>
           {q ? `"${q}" araması` : "Tüm arşiv"} · {selectedStatus === "all" ? "Tüm durumlar" : statusBadge(selectedStatus as ArchiveSeriesStatus)}
@@ -170,7 +176,7 @@ export default function SeriesPage({ searchParams }: SeriesPageProps) {
       </section>
 
       {filteredSeries.length > 0 ? (
-        <section className="seriesSections">
+        <section className="seriesSections seriesSectionsV102">
           {statusOrder.map((status) => {
             const items = filteredSeries.filter((series) => series.status === status);
 
@@ -179,7 +185,7 @@ export default function SeriesPage({ searchParams }: SeriesPageProps) {
             }
 
             return (
-              <section key={status} className="seriesGroup">
+              <section key={status} className="seriesGroup seriesGroupV102">
                 <div className="seriesGroupHead">
                   <div>
                     <p>{statusBadge(status)}</p>
@@ -188,25 +194,45 @@ export default function SeriesPage({ searchParams }: SeriesPageProps) {
                   <span>{items.length} seri</span>
                 </div>
 
-                <div className="seriesCards">
+                <div className="seriesCards seriesCardsV102">
                   {items.map((series) => (
-                    <article key={series.id} className={`seriesCard ${series.status}`}>
-                      <div className="seriesPoster">
+                    <article key={series.id} className={`seriesCard premiumSeriesCard ${series.status}`}>
+                      <div className="premiumPoster">
+                        <div className="premiumPosterGlow" />
                         <span>{series.title.slice(0, 2).toUpperCase()}</span>
+                        <small>{statusBadge(series.status)}</small>
                       </div>
 
-                      <div className="seriesBody">
-                        <div className="seriesMeta">
-                          <span>{series.category}</span>
-                          <span>{statusBadge(series.status)}</span>
+                      <div className="seriesBody premiumSeriesBody">
+                        <div className="premiumCardTop">
+                          <div className="seriesMeta">
+                            <span>{series.category}</span>
+                            <span>{series.channel}</span>
+                          </div>
+                          <span className={`statusDot ${series.status}`} />
                         </div>
 
                         <h3>{series.title}</h3>
                         <p>{series.description}</p>
 
-                        <div className="progressWrap">
+                        <div className="premiumInfoRow">
+                          <div>
+                            <span>Bölüm</span>
+                            <strong>{series.episodes}</strong>
+                          </div>
+                          <div>
+                            <span>İlerleme</span>
+                            <strong>%{series.progress}</strong>
+                          </div>
+                          <div>
+                            <span>Durum</span>
+                            <strong>{statusBadge(series.status)}</strong>
+                          </div>
+                        </div>
+
+                        <div className="progressWrap premiumProgress">
                           <div className="progressTop">
-                            <span>{series.episodes} bölüm</span>
+                            <span>{statusDescription(series.status)}</span>
                             <span>%{series.progress}</span>
                           </div>
                           <div className="progressTrack">
@@ -214,9 +240,9 @@ export default function SeriesPage({ searchParams }: SeriesPageProps) {
                           </div>
                         </div>
 
-                        <div className="seriesFooter">
-                          <span>{series.channel}</span>
-                          <a href={`/series/${series.slug}`}>Detaya git</a>
+                        <div className="premiumSeriesActions">
+                          <a href={`/series/${series.slug}`}>Detaya Git</a>
+                          <a className="soft" href={`/series?category=${encodeURIComponent(series.category)}`}>Benzerleri Gör</a>
                         </div>
                       </div>
                     </article>

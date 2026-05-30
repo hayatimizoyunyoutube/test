@@ -2625,3 +2625,267 @@ h1 span {
     font-size: 19px;
   }
 }
+
+/* v1.0.2 - Premium Series Cards */
+.seriesPageV102 {
+  background:
+    radial-gradient(circle at 82% 0%, rgba(124, 58, 237, 0.28), transparent 34%),
+    radial-gradient(circle at 18% 8%, rgba(34, 211, 238, 0.18), transparent 32%),
+    radial-gradient(circle at 72% 92%, rgba(236, 72, 153, 0.1), transparent 30%),
+    #07101f;
+}
+
+.seriesHeroV102 {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 28px 90px rgba(0,0,0,0.32);
+}
+
+.seriesFilterPanelV102 {
+  box-shadow: 0 24px 80px rgba(0,0,0,0.22);
+}
+
+.filterSummaryV102 {
+  box-shadow: 0 18px 60px rgba(0,0,0,0.2);
+}
+
+.seriesSectionsV102 {
+  gap: 26px;
+}
+
+.seriesGroupV102 {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.24);
+}
+
+.seriesGroupV102::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(124,58,237,0.16), transparent 34%);
+  pointer-events: none;
+}
+
+.seriesGroupV102 > * {
+  position: relative;
+}
+
+.seriesCardsV102 {
+  grid-template-columns: 1fr;
+}
+
+.premiumSeriesCard {
+  position: relative;
+  grid-template-columns: 170px 1fr;
+  gap: 20px;
+  padding: 18px;
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.035)),
+    rgba(0,0,0,0.22);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.premiumSeriesCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(103,232,249,0.26);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.095), rgba(255,255,255,0.045)),
+    rgba(0,0,0,0.18);
+}
+
+.premiumPoster {
+  position: relative;
+  min-height: 220px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.24), transparent 24%),
+    linear-gradient(135deg, #7c3aed, #06b6d4);
+}
+
+.premiumPosterGlow {
+  position: absolute;
+  inset: 14px;
+  border-radius: 22px;
+  background: rgba(0,0,0,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.premiumPoster span {
+  position: relative;
+  z-index: 2;
+  font-size: 42px;
+  font-weight: 1000;
+  letter-spacing: -0.04em;
+}
+
+.premiumPoster small {
+  position: absolute;
+  z-index: 3;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.42);
+  color: #e2e8f0;
+  padding: 9px 11px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 1000;
+}
+
+.premiumCardTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.statusDot {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  box-shadow: 0 0 22px currentColor;
+  margin-top: 8px;
+}
+
+.statusDot.completed {
+  color: #22c55e;
+  background: #22c55e;
+}
+
+.statusDot.active {
+  color: #3b82f6;
+  background: #3b82f6;
+}
+
+.statusDot.planned {
+  color: #a855f7;
+  background: #a855f7;
+}
+
+.premiumSeriesBody h3 {
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.premiumInfoRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.premiumInfoRow div {
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 12px;
+}
+
+.premiumInfoRow span {
+  display: block;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.premiumInfoRow strong {
+  display: block;
+  margin-top: 6px;
+  color: #f8fafc;
+  font-size: 15px;
+}
+
+.premiumProgress .progressTop {
+  gap: 12px;
+}
+
+.premiumProgress .progressTop span:first-child {
+  color: #94a3b8;
+}
+
+.premiumSeriesActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.premiumSeriesActions a {
+  border-radius: 16px;
+  background: linear-gradient(90deg, #06b6d4, #7c3aed);
+  color: #fff;
+  padding: 13px 16px;
+  font-weight: 1000;
+  box-shadow: 0 18px 42px rgba(37,99,235,0.18);
+  transition: transform 0.18s ease;
+}
+
+.premiumSeriesActions a:hover {
+  transform: translateY(-2px);
+}
+
+.premiumSeriesActions .soft {
+  background: rgba(255,255,255,0.075);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #cbd5e1;
+  box-shadow: none;
+}
+
+.betaFeaturedCard {
+  border-radius: 26px;
+}
+
+.betaFeaturedCard .progressTrack {
+  margin-top: 4px;
+}
+
+@media (max-width: 980px) {
+  .premiumSeriesCard {
+    grid-template-columns: 1fr;
+    border-radius: 24px;
+  }
+
+  .premiumPoster {
+    min-height: 160px;
+  }
+
+  .premiumInfoRow {
+    grid-template-columns: 1fr;
+  }
+
+  .premiumSeriesActions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .premiumSeriesActions a {
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .premiumSeriesCard {
+    padding: 14px;
+  }
+
+  .premiumPoster {
+    min-height: 140px;
+  }
+
+  .premiumPoster span {
+    font-size: 34px;
+  }
+
+  .premiumSeriesBody h3 {
+    font-size: 24px;
+  }
+}

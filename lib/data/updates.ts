@@ -103,18 +103,39 @@ export const completedUpdates: UpdateNote[] = [
       "Kart hizaları ve buton davranışları iyileştirildi"
     ],
     supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.2",
+    title: "Seri Kartları Geliştirme",
+    status: "completed",
+    summary: "Seri kartları daha profesyonel, okunabilir ve mobil uyumlu hale getirildi.",
+    items: [
+      "Premium seri kart tasarımı",
+      "Güçlendirilmiş ilerleme alanı",
+      "Detaya git aksiyonu yenilendi",
+      "Kart hover efektleri iyileştirildi",
+      "Mobil seri kart düzeni düzeltildi"
+    ],
+    supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.2",
+    title: "Seri Kartları Geliştirme",
+    status: "completed",
+    summary: "Seri kartları daha profesyonel, okunabilir ve mobil uyumlu hale getirildi.",
+    items: [
+      "Premium seri kart tasarımı",
+      "Güçlendirilmiş ilerleme alanı",
+      "Detaya git aksiyonu yenilendi",
+      "Kart hover efektleri iyileştirildi",
+      "Mobil seri kart düzeni düzeltildi"
+    ],
+    supabaseRun: "Gerekli değil"
   }
 ];
 
 export const plannedUpdates: UpdateNote[] = [
-  {
-    version: "v1.0.2",
-    title: "Seri Kartları Geliştirme",
-    status: "planned",
-    summary: "Seri kartları daha güçlü görsel düzene taşınacak.",
-    items: ["Kart görünümü", "İlerleme alanı", "Detay aksiyonları"],
-    supabaseRun: "Gerekli değil"
-  },
+
   {
     version: "v1.0.3",
     title: "Kategori Deneyimi Geliştirme",

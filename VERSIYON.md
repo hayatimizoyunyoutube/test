@@ -1,11 +1,11 @@
 # Sürüm Bilgisi
 
-Mevcut sürüm: v1.0.1
+Mevcut sürüm: v1.0.2
 
 Ana açılış hedefi: v4.0.0
 
 Kural: Her şey küçük ve kontrollü sürümlerle eklenecek.
 
-## v1.0.1
+## v1.0.2
 
-Public Beta Fix 1 tamamlandı. Sürüm config dosyası eklendi, health endpoint güncellendi, profesyonel 404 sayfası ve mobil/tablet cila düzeltmeleri yapıldı.
+Seri kartları geliştirildi. /series sayfasındaki kartlar daha profesyonel, okunabilir ve mobil uyumlu hale getirildi.

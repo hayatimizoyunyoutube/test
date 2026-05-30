@@ -1,12 +1,12 @@
 # Hayatımız Oyun - YouTube Arşiv Video Sitesi
 
-Mevcut sürüm: v1.0.1
+Mevcut sürüm: v1.0.2
 
 Ana yayın hedefi: v4.0.0
 
-## v1.0.1 Public Beta Fix 1
+## v1.0.2 Seri Kartları Geliştirme
 
-Bu sürümde v1.0.0 sonrası public beta hataları ve küçük arayüz problemleri düzeltildi.
+Bu sürümde public /series sayfasındaki seri kartları geliştirildi.
 
 ## Mevcut public alanlar
 
