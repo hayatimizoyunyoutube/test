@@ -119,6 +119,20 @@ export const completedUpdates: UpdateNote[] = [
     supabaseRun: "Gerekli değil"
   },
   {
+    version: "v1.0.3",
+    title: "Profesyonel Ana Sayfa Vitrini",
+    status: "completed",
+    summary: "Ana sayfa daha sinematik ve YouTube arşiv sitesi hissine yakın hale getirildi.",
+    items: [
+      "Kompakt üst header",
+      "Büyük görselli hero/banner",
+      "Devam Eden Seriler bölümü",
+      "Son Eklenen Videolar bölümü",
+      "Deneyim ve istatistik kartları"
+    ],
+    supabaseRun: "Gerekli değil"
+  },
+  {
     version: "v1.0.2",
     title: "Seri Kartları Geliştirme",
     status: "completed",
@@ -131,13 +145,27 @@ export const completedUpdates: UpdateNote[] = [
       "Mobil seri kart düzeni düzeltildi"
     ],
     supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.3",
+    title: "Profesyonel Ana Sayfa Vitrini",
+    status: "completed",
+    summary: "Ana sayfa daha sinematik ve YouTube arşiv sitesi hissine yakın hale getirildi.",
+    items: [
+      "Kompakt üst header",
+      "Büyük görselli hero/banner",
+      "Devam Eden Seriler bölümü",
+      "Son Eklenen Videolar bölümü",
+      "Deneyim ve istatistik kartları"
+    ],
+    supabaseRun: "Gerekli değil"
   }
 ];
 
 export const plannedUpdates: UpdateNote[] = [
 
   {
-    version: "v1.0.3",
+    version: "v1.0.4",
     title: "Kategori Deneyimi Geliştirme",
     status: "planned",
     summary: "Kategori sayfası ve keşif alanları daha profesyonel hale getirilecek.",

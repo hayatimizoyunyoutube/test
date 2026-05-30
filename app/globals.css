@@ -2889,3 +2889,545 @@ h1 span {
     font-size: 24px;
   }
 }
+
+/* v1.0.3 - Professional Home Showcase */
+.cinemaHome {
+  min-height: 100vh;
+  padding: 18px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 78% 0%, rgba(124, 58, 237, 0.22), transparent 34%),
+    radial-gradient(circle at 20% 0%, rgba(14, 165, 233, 0.16), transparent 30%),
+    linear-gradient(180deg, #05070d 0%, #07101f 58%, #05070d 100%);
+}
+
+.cinemaHeader {
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 14px;
+  align-items: center;
+  width: min(1380px, 100%);
+  margin: 0 auto 18px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 22px;
+  background: rgba(5, 10, 18, 0.88);
+  backdrop-filter: blur(18px);
+  padding: 10px;
+  box-shadow: 0 18px 70px rgba(0,0,0,0.35);
+}
+
+.cinemaBrand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.cinemaBrandMark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #ef4444, #7c3aed, #06b6d4);
+  box-shadow: 0 12px 32px rgba(124,58,237,0.35);
+}
+
+.cinemaBrand strong {
+  display: block;
+  font-size: 17px;
+}
+
+.cinemaBrand small {
+  display: block;
+  margin-top: 2px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.cinemaNav {
+  display: flex;
+  gap: 6px;
+}
+
+.cinemaNav a {
+  border-radius: 14px;
+  color: #cbd5e1;
+  padding: 12px 13px;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.cinemaNav a.active,
+.cinemaNav a:hover {
+  background: rgba(239,68,68,0.12);
+  color: #fff;
+}
+
+.cinemaSearch {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 8px 8px 8px 14px;
+}
+
+.cinemaSearch span {
+  color: #22d3ee;
+  font-weight: 1000;
+}
+
+.cinemaSearch input {
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+.cinemaSearch input::placeholder {
+  color: #94a3b8;
+}
+
+.cinemaSearch button,
+.cinemaVersion {
+  border: 0;
+  border-radius: 13px;
+  background: linear-gradient(90deg, #ef4444, #7c3aed);
+  color: #fff;
+  padding: 11px 14px;
+  font-weight: 1000;
+}
+
+.cinemaVersion {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.cinemaHero {
+  position: relative;
+  width: min(1380px, 100%);
+  min-height: 430px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 26px;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background:
+    linear-gradient(90deg, rgba(5, 8, 15, 0.95), rgba(5, 8, 15, 0.7)),
+    radial-gradient(circle at 68% 42%, rgba(6,182,212,0.38), transparent 28%),
+    radial-gradient(circle at 48% 38%, rgba(124,58,237,0.42), transparent 26%),
+    linear-gradient(135deg, #111827, #020617);
+  box-shadow: 0 34px 120px rgba(0,0,0,0.42);
+  padding: 44px;
+}
+
+.heroBackdropText {
+  position: absolute;
+  right: -20px;
+  top: 42px;
+  font-size: clamp(70px, 13vw, 210px);
+  line-height: 0.82;
+  letter-spacing: -0.08em;
+  font-weight: 1000;
+  color: rgba(255,255,255,0.055);
+  pointer-events: none;
+}
+
+.cinemaHeroContent {
+  position: relative;
+  z-index: 2;
+}
+
+.cinemaKicker {
+  margin: 0 0 10px;
+  color: #ef4444;
+  font-size: 13px;
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+}
+
+.cinemaHero h1 {
+  margin: 0;
+  max-width: 720px;
+  font-size: clamp(52px, 8vw, 104px);
+  line-height: 0.86;
+  letter-spacing: -0.07em;
+}
+
+.cinemaHero h1 span {
+  display: block;
+  background: linear-gradient(90deg, #fff, #a78bfa, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cinemaHero p:not(.cinemaKicker) {
+  max-width: 650px;
+  color: #d1d5db;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.cinemaHeroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.cinemaHeroActions a {
+  border-radius: 15px;
+  background: linear-gradient(90deg, #ef4444, #7c3aed);
+  padding: 14px 18px;
+  font-weight: 1000;
+  box-shadow: 0 18px 44px rgba(239,68,68,0.18);
+}
+
+.cinemaHeroActions .ghost {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: none;
+}
+
+.cinemaHeroActions .red {
+  border-color: rgba(239,68,68,0.22);
+}
+
+.cinemaHeroSide {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 13px;
+}
+
+.cinemaHeroSide div {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 18px;
+}
+
+.cinemaHeroSide strong {
+  font-size: 28px;
+}
+
+.cinemaHeroSide span {
+  color: #cbd5e1;
+  font-weight: 900;
+}
+
+.cinemaSection,
+.cinemaInfoGrid,
+.finalBeta {
+  width: min(1380px, 100%);
+  margin: 22px auto 0;
+}
+
+.cinemaSection {
+  border-radius: 24px;
+}
+
+.cinemaSectionHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: end;
+  margin-bottom: 14px;
+}
+
+.cinemaSectionHead p {
+  margin: 0 0 5px;
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+}
+
+.cinemaSectionHead h2 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.cinemaSectionHead a {
+  color: #ef4444;
+  font-weight: 1000;
+}
+
+.continueRail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.continueCard {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 12px;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.continueCard:hover,
+.videoCard:hover,
+.infoTile:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.08);
+}
+
+.continuePoster {
+  min-height: 116px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.24), transparent 24%),
+    linear-gradient(135deg, #ef4444, #7c3aed, #06b6d4);
+}
+
+.continuePoster span {
+  font-size: 28px;
+  font-weight: 1000;
+}
+
+.continueCard strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;
+}
+
+.continueCard small {
+  display: block;
+  margin: 8px 0;
+  color: #94a3b8;
+  font-weight: 800;
+}
+
+.miniProgress {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.09);
+}
+
+.miniProgress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ef4444, #22d3ee);
+}
+
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.videoCard {
+  border-radius: 20px;
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 12px;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.videoThumb {
+  position: relative;
+  min-height: 130px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.22), transparent 24%),
+    linear-gradient(135deg, #111827, #7c3aed, #0ea5e9);
+}
+
+.videoThumb span {
+  font-size: 30px;
+  font-weight: 1000;
+}
+
+.videoThumb small {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  border-radius: 999px;
+  background: rgba(239,68,68,0.9);
+  padding: 6px 9px;
+  font-size: 11px;
+  font-weight: 1000;
+}
+
+.videoCard h3 {
+  margin: 12px 0 4px;
+  font-size: 16px;
+}
+
+.videoCard p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.cinemaInfoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.infoTile {
+  border-radius: 20px;
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 18px;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.infoTile span {
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+}
+
+.infoTile strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 20px;
+}
+
+.infoTile p {
+  color: #94a3b8;
+  line-height: 1.55;
+}
+
+.finalBeta {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  background: rgba(255,255,255,0.04);
+  padding: 20px;
+}
+
+.statusColumns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.statusColumns a {
+  border-radius: 18px;
+  background: rgba(0,0,0,0.22);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 18px;
+}
+
+.statusColumns strong {
+  display: block;
+}
+
+.statusColumns span {
+  display: block;
+  margin-top: 8px;
+  color: #94a3b8;
+}
+
+@media (max-width: 1180px) {
+  .cinemaHeader {
+    grid-template-columns: 1fr;
+  }
+
+  .cinemaNav {
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .cinemaSearch {
+    width: 100%;
+  }
+
+  .cinemaVersion {
+    display: none;
+  }
+
+  .cinemaHero,
+  .continueRail,
+  .videoGrid,
+  .cinemaInfoGrid,
+  .statusColumns {
+    grid-template-columns: 1fr;
+  }
+
+  .cinemaHero {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 620px) {
+  .cinemaHome {
+    padding: 10px;
+  }
+
+  .cinemaHeader {
+    top: 8px;
+    border-radius: 18px;
+  }
+
+  .cinemaBrand {
+    padding: 6px;
+  }
+
+  .cinemaHero {
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  .heroBackdropText {
+    display: none;
+  }
+
+  .cinemaHero h1 {
+    font-size: clamp(44px, 17vw, 70px);
+  }
+
+  .cinemaHeroActions {
+    display: grid;
+  }
+
+  .cinemaHeroActions a {
+    text-align: center;
+  }
+
+  .cinemaHeroSide div {
+    padding: 14px;
+  }
+
+  .continueCard {
+    grid-template-columns: 1fr;
+  }
+
+  .continuePoster {
+    min-height: 120px;
+  }
+
+  .cinemaSectionHead {
+    display: grid;
+  }
+}

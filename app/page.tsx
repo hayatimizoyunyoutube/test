@@ -3,18 +3,36 @@ import { archiveCategories } from "@/lib/data/categories";
 import { archiveChannels } from "@/lib/data/channels";
 import { siteConfig } from "@/lib/config/site";
 
-const version = siteConfig.version;
-
-const completedCount = archiveSeries.filter((item) => item.status === "completed").length;
-const activeCount = archiveSeries.filter((item) => item.status === "active").length;
-const plannedCount = archiveSeries.filter((item) => item.status === "planned").length;
+const completedSeries = archiveSeries.filter((item) => item.status === "completed");
+const activeSeries = archiveSeries.filter((item) => item.status === "active");
+const plannedSeries = archiveSeries.filter((item) => item.status === "planned");
 const totalEpisodes = archiveSeries.reduce((total, item) => total + item.episodes, 0);
 
-const quickLinks = [
-  { href: "/series", label: "Seriler" },
-  { href: "/categories", label: "Kategoriler" },
-  { href: "/channels", label: "Kanallar" },
-  { href: "/updates", label: "Güncellemeler" }
+const recentVideos = [
+  {
+    title: "A Way Out - Bölüm 1",
+    series: "A Way Out",
+    meta: "Yeni eklenen video",
+    tag: "Yeni"
+  },
+  {
+    title: "A Plague Tale Requiem - Bölüm 1",
+    series: "A Plague Tale",
+    meta: "Hikaye arşivi",
+    tag: "Arşiv"
+  },
+  {
+    title: "Elden Ring - Bölüm 8",
+    series: "Elden Ring",
+    meta: "Devam eden seri",
+    tag: "Aktif"
+  },
+  {
+    title: "Cyberpunk 2077 - Bölüm 4",
+    series: "Cyberpunk 2077",
+    meta: "Bilim kurgu arşivi",
+    tag: "Yeni"
+  }
 ];
 
 function statusText(status: string) {
@@ -24,194 +42,188 @@ function statusText(status: string) {
 }
 
 export default function HomePage() {
-  const featuredSeries = archiveSeries.slice(0, 6);
-
   return (
-    <main className="site-shell homeBetaShell">
-      <aside className="sidebar">
-        <div className="brand">
-          <div className="brandIcon">▶</div>
-          <div>
+    <main className="cinemaHome">
+      <header className="cinemaHeader">
+        <a className="cinemaBrand" href="/">
+          <span className="cinemaBrandMark">▶</span>
+          <span>
             <strong>Hayatımız Oyun</strong>
-            <span>YouTube Arşiv Video Sitesi</span>
-          </div>
-        </div>
+            <small>YouTube Arşiv Video Sitesi</small>
+          </span>
+        </a>
 
-        <nav className="nav">
+        <nav className="cinemaNav">
           <a className="active" href="/">Ana Sayfa</a>
-          {quickLinks.map((link) => (
-            <a key={link.href} href={link.href}>{link.label}</a>
-          ))}
+          <a href="/series">Seriler</a>
+          <a href="/categories">Kategoriler</a>
+          <a href="/channels">Kanallar</a>
+          <a href="/updates">Güncellemeler</a>
         </nav>
 
-        <div className="versionBox">
-          <strong>{version}</strong>
-          <span>Public Arşiv Beta</span>
+        <form className="cinemaSearch" action="/series">
+          <span>⌕</span>
+          <input name="q" placeholder="Seri, video veya kanal ara..." />
+          <button type="submit">Ara</button>
+        </form>
+
+        <a className="cinemaVersion" href="/updates">{siteConfig.version}</a>
+      </header>
+
+      <section className="cinemaHero">
+        <div className="heroBackdropText">Hayatımız Oyun</div>
+
+        <div className="cinemaHeroContent">
+          <p className="cinemaKicker">ARŞİV HAZIR</p>
+          <h1>
+            HAYATIMIZ <span>OYUN</span>
+          </h1>
+          <p>
+            Devam eden seri olduğunda kaldığımız bölümü burada bulacağız.
+            Tamamlanan seriler, yakında gelecek içerikler ve son eklenen videolar
+            tek merkezde toplanacak.
+          </p>
+
+          <div className="cinemaHeroActions">
+            <a href="/series">Serileri Gör</a>
+            <a href="/channels" className="ghost">Kanallar</a>
+            <a href="/updates" className="ghost red">Yol Haritası</a>
+          </div>
         </div>
-      </aside>
 
-      <section className="content betaContent">
-        <header className="mobileHeader">
-          <div className="brand compact">
-            <div className="brandIcon">▶</div>
-            <div>
-              <strong>Hayatımız Oyun</strong>
-              <span>{version}</span>
-            </div>
-          </div>
-        </header>
-
-        <header className="topbar proTopbar betaTopbar">
-          <form className="homeSearch betaSearch" action="/series">
-            <span>⌕</span>
-            <input name="q" placeholder="Seri, oyun, kategori veya kanal ara..." />
-            <button type="submit">Arşivde Ara</button>
-          </form>
-
-          <div className="topbarActions">
-            <a href="/series">Serileri Aç</a>
-            <a href="/updates" className="soft">Yol Haritası</a>
-          </div>
-        </header>
-
-        <section className="betaHero">
-          <div className="betaHeroText">
-            <p className="eyebrow">v1.0.0 · PUBLIC ARŞİV BETA</p>
-            <h1>
-              YouTube Oyun Serileri İçin <span>Profesyonel Arşiv Merkezi.</span>
-            </h1>
-            <p>
-              Tamamlanan, devam eden ve yakında gelecek oyun serilerini tek
-              merkezde keşfet. Bu beta sürümde public arşiv deneyimi demo
-              verilerle tamamlandı.
-            </p>
-
-            <div className="actions proActions">
-              <a href="/series">Serileri Keşfet</a>
-              <a className="ghost" href="/categories">Kategorilere Bak</a>
-              <a className="ghost cyan" href="/channels">Kanalları Gör</a>
-            </div>
-          </div>
-
-          <div className="betaHeroBoard">
-            <div className="boardLine">
-              <span>Toplam Seri</span>
-              <strong>{archiveSeries.length}</strong>
-            </div>
-            <div className="boardLine">
-              <span>Toplam Bölüm</span>
-              <strong>{totalEpisodes}</strong>
-            </div>
-            <div className="boardLine">
-              <span>Kategori</span>
-              <strong>{archiveCategories.length}</strong>
-            </div>
-            <div className="boardLine">
-              <span>Kanal</span>
-              <strong>{archiveChannels.length}</strong>
-            </div>
-          </div>
-        </section>
-
-        <section className="betaStatsGrid">
-          <article>
-            <span>Tamamlanan Seriler</span>
-            <strong>{completedCount}</strong>
-            <p>Arşivlenmiş ve bitmiş seri alanı.</p>
-          </article>
-          <article>
-            <span>Devam Eden Seriler</span>
-            <strong>{activeCount}</strong>
-            <p>Aktif şekilde büyüyen seri alanı.</p>
-          </article>
-          <article>
-            <span>Yakında Gelecek</span>
-            <strong>{plannedCount}</strong>
-            <p>Planlanan seri ve yayın hazırlıkları.</p>
-          </article>
-        </section>
-
-        <section className="mobileQuickNav betaQuickNav">
-          {quickLinks.map((link) => (
-            <a key={link.href} href={link.href}>{link.label}</a>
-          ))}
-        </section>
-
-        <section className="betaSection">
-          <div className="betaSectionHead">
-            <div>
-              <p className="eyebrow">ÖNE ÇIKAN SERİLER</p>
-              <h2>Public Arşiv Beta Vitrini</h2>
-            </div>
-            <a href="/series">Tüm Serileri Gör</a>
-          </div>
-
-          <div className="betaFeaturedGrid">
-            {featuredSeries.map((series) => (
-              <a key={series.id} href={`/series/${series.slug}`} className={`betaFeaturedCard ${series.status}`}>
-                <div className="betaPoster">
-                  <span>{series.title.slice(0, 2).toUpperCase()}</span>
-                </div>
-                <div>
-                  <div className="seriesMeta">
-                    <span>{series.category}</span>
-                    <span>{statusText(series.status)}</span>
-                  </div>
-                  <h3>{series.title}</h3>
-                  <p>{series.description}</p>
-
-                  <div className="progressTop">
-                    <span>{series.episodes} bölüm</span>
-                    <span>%{series.progress}</span>
-                  </div>
-                  <div className="progressTrack">
-                    <div style={{ width: `${series.progress}%` }} />
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </section>
-
-        <section className="betaSection betaExplore">
-          <div className="betaSectionHead">
-            <div>
-              <p className="eyebrow">KEŞİF ALANLARI</p>
-              <h2>Arşivi Nasıl Gezebilirsin?</h2>
-            </div>
-          </div>
-
-          <div className="betaExploreGrid">
-            <a href="/series">
-              <strong>Seriler</strong>
-              <span>Tamamlanan, devam eden ve yakında gelecek oyun serileri.</span>
-            </a>
-            <a href="/categories">
-              <strong>Kategoriler</strong>
-              <span>Aksiyon, RPG, korku, bilim kurgu ve diğer arşiv türleri.</span>
-            </a>
-            <a href="/channels">
-              <strong>Kanallar</strong>
-              <span>Arşiv içeriklerini kanal mantığıyla grupla ve keşfet.</span>
-            </a>
-            <a href="/updates">
-              <strong>Güncellemeler</strong>
-              <span>Projenin hangi sürümde ne kazandığını takip et.</span>
-            </a>
-          </div>
-        </section>
-
-        <section className="aboutBox proAbout betaNote">
+        <div className="cinemaHeroSide">
           <div>
-            <h2>v1.0.0 beta notu</h2>
-            <p>
-              Bu sürüm public arşiv deneyimini toparlar. Henüz Supabase, giriş
-              sistemi, admin panel ve YouTube API yok. Bunlar ileriki sürümlerde
-              kontrollü şekilde eklenecek.
-            </p>
+            <strong>{archiveSeries.length}</strong>
+            <span>Toplam Seri</span>
           </div>
-          <a href="/updates">Güncelleme Akışını Aç</a>
-        </section>
+          <div>
+            <strong>{totalEpisodes}</strong>
+            <span>Toplam Bölüm</span>
+          </div>
+          <div>
+            <strong>{archiveCategories.length}</strong>
+            <span>Kategori</span>
+          </div>
+          <div>
+            <strong>{archiveChannels.length}</strong>
+            <span>Kanal</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="cinemaSection">
+        <div className="cinemaSectionHead">
+          <div>
+            <p>DEVAM EDEN SERİLER</p>
+            <h2>Aktif Arşiv Takibi</h2>
+          </div>
+          <a href="/series?status=active">Tümünü Gör →</a>
+        </div>
+
+        <div className="continueRail">
+          {activeSeries.map((series) => (
+            <a key={series.id} href={`/series/${series.slug}`} className="continueCard">
+              <div className="continuePoster">
+                <span>{series.title.slice(0, 2).toUpperCase()}</span>
+              </div>
+              <div>
+                <strong>{series.title}</strong>
+                <small>{series.episodes} bölüm · %{series.progress}</small>
+                <div className="miniProgress">
+                  <span style={{ width: `${series.progress}%` }} />
+                </div>
+              </div>
+            </a>
+          ))}
+
+          {plannedSeries.slice(0, 1).map((series) => (
+            <a key={series.id} href={`/series/${series.slug}`} className="continueCard mutedCard">
+              <div className="continuePoster">
+                <span>{series.title.slice(0, 2).toUpperCase()}</span>
+              </div>
+              <div>
+                <strong>{series.title}</strong>
+                <small>Yakında başlayacak</small>
+                <div className="miniProgress">
+                  <span style={{ width: "8%" }} />
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="cinemaSection">
+        <div className="cinemaSectionHead">
+          <div>
+            <p>SON EKLENEN VİDEOLAR</p>
+            <h2>Yeni Arşiv Akışı</h2>
+          </div>
+          <a href="/series">Tümünü Gör →</a>
+        </div>
+
+        <div className="videoGrid">
+          {recentVideos.map((video) => (
+            <article key={video.title} className="videoCard">
+              <div className="videoThumb">
+                <span>{video.series.slice(0, 2).toUpperCase()}</span>
+                <small>{video.tag}</small>
+              </div>
+              <h3>{video.title}</h3>
+              <p>{video.meta}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="cinemaInfoGrid">
+        <a href="/series?status=completed" className="infoTile">
+          <span>Kesintisiz Deneyim</span>
+          <strong>{completedSeries.length} tamamlanan seri</strong>
+          <p>Bitmiş serileri düzenli şekilde arşivde tut.</p>
+        </a>
+
+        <a href="/series?status=active" className="infoTile">
+          <span>İlerlemeyi Kaydet</span>
+          <strong>{activeSeries.length} devam eden seri</strong>
+          <p>Aktif serilerin hangi aşamada olduğunu hızlıca gör.</p>
+        </a>
+
+        <a href="/categories" className="infoTile">
+          <span>Listeler</span>
+          <strong>{archiveCategories.length} kategori</strong>
+          <p>Serileri türüne göre ayır ve kolay keşfet.</p>
+        </a>
+
+        <a href="/updates" className="infoTile">
+          <span>Topluluk</span>
+          <strong>{siteConfig.targetVersion} hedefi</strong>
+          <p>Site adım adım ana yayın sürümüne hazırlanıyor.</p>
+        </a>
+      </section>
+
+      <section className="cinemaSection finalBeta">
+        <div className="cinemaSectionHead">
+          <div>
+            <p>ARŞİV DURUMU</p>
+            <h2>Public Beta Vitrini</h2>
+          </div>
+        </div>
+
+        <div className="statusColumns">
+          <a href="/series?status=completed">
+            <strong>Tamamlanan Seriler</strong>
+            <span>{completedSeries.length} seri</span>
+          </a>
+          <a href="/series?status=active">
+            <strong>Devam Eden Seriler</strong>
+            <span>{activeSeries.length} seri</span>
+          </a>
+          <a href="/series?status=planned">
+            <strong>Yakında Gelecek</strong>
+            <span>{plannedSeries.length} seri</span>
+          </a>
+        </div>
       </section>
     </main>
   );
