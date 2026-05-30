@@ -58,7 +58,7 @@ button, input { font: inherit; }
 
 /* Shared sections/cards */
 .cinemaSection, .cinemaInfoGrid, .panelBox, .filterPanel, .resultSummary, .seriesFlow, .statGrid, .dashboardGrid { width: min(1380px,100%); margin: 22px auto 0; }
-.cinemaSectionHead, .sectionHead, .groupHead { display: flex; justify-content: space-between; gap: 18px; align-items: end; margin-bottom: 14px; }
+.cinemaSectionHead, .sectionHead, .groupHead { display: flex; justify-content: space-between; gap: 18px; align-items: flex-end; margin-bottom: 14px; }
 .cinemaSectionHead p, .sectionHead p, .groupHead p { margin: 0 0 5px; color: #ef4444; font-size: 12px; font-weight: 1000; letter-spacing: .08em; text-transform: uppercase; }
 .cinemaSectionHead h2, .sectionHead h2, .groupHead h2 { margin: 0; font-size: clamp(26px,4vw,42px); }
 .cinemaSectionHead a { color: #ef4444; font-weight: 1000; }
@@ -127,7 +127,7 @@ button, input { font: inherit; }
 .timelineIndex { color: #67e8f9; font-weight: 1000; }
 .timelineVersion strong { font-size: 18px; }
 .timelineVersion small { display: block; margin-top: 5px; color: #94a3b8; font-size: 11px; font-weight: 1000; }
-.timelineTitle { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+.timelineTitle { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
 .timelineTitle h3 { margin: 0; font-size: 21px; }
 .timelineTitle span { border-radius: 999px; background: rgba(255,255,255,.07); color: #cbd5e1; padding: 7px 10px; font-size: 12px; font-weight: 1000; }
 .timelineContent p { margin: 8px 0 0; color: #94a3b8; line-height: 1.6; }
@@ -482,5 +482,259 @@ button, input { font: inherit; }
     transition-duration: 0.001ms !important;
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+/* v1.0.9 - Stability status page */
+.statusPageV109 {
+  min-height: 100vh;
+  padding: 18px 18px 56px;
+  background:
+    radial-gradient(circle at 78% 0%, rgba(34, 211, 238, 0.18), transparent 34%),
+    radial-gradient(circle at 18% 0%, rgba(168, 85, 247, 0.18), transparent 32%),
+    linear-gradient(180deg, #05070d 0%, #07101f 62%, #05070d 100%);
+}
+
+.statusHeroV109 {
+  position: relative;
+  width: min(1380px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: stretch;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 30px;
+  background:
+    linear-gradient(110deg, rgba(5, 10, 20, 0.95), rgba(15, 23, 42, 0.72)),
+    radial-gradient(circle at 74% 35%, rgba(34, 211, 238, 0.24), transparent 30%),
+    radial-gradient(circle at 40% 30%, rgba(168, 85, 247, 0.22), transparent 26%);
+  padding: 38px;
+  box-shadow: 0 30px 100px rgba(0,0,0,0.34);
+  overflow: hidden;
+}
+
+.statusHeroV109::after {
+  content: "Stability";
+  position: absolute;
+  right: -20px;
+  bottom: -26px;
+  font-size: clamp(76px, 14vw, 190px);
+  font-weight: 1000;
+  letter-spacing: -0.09em;
+  color: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+
+.statusHeroV109 h1 {
+  margin: 12px 0;
+  max-width: 820px;
+  font-size: clamp(46px, 7vw, 84px);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+.statusHeroV109 h1 span {
+  display: block;
+  background: linear-gradient(90deg, #67e8f9, #c084fc, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.statusHeroV109 p:not(.eyebrow) {
+  max-width: 720px;
+  color: #cbd5e1;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.statusHeroActionsV109 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.statusHeroActionsV109 a {
+  border-radius: 16px;
+  background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+  padding: 14px 18px;
+  font-weight: 1000;
+}
+
+.statusHeroActionsV109 .ghost {
+  background: rgba(255,255,255,0.075);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.statusSummaryV109 {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 14px;
+}
+
+.statusSummaryV109 div {
+  border-radius: 20px;
+  background: rgba(255,255,255,0.075);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 20px;
+}
+
+.statusSummaryV109 strong {
+  display: block;
+  font-size: 30px;
+}
+
+.statusSummaryV109 span {
+  display: block;
+  margin-top: 6px;
+  color: #94a3b8;
+  font-weight: 900;
+}
+
+.stabilityCheckShellV109,
+.routeCheckShellV109 {
+  width: min(1380px, 100%);
+  margin: 22px auto 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+  padding: 24px;
+  box-shadow: 0 28px 90px rgba(0,0,0,0.22);
+}
+
+.statusSectionHeadV109 {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-end;
+  margin-bottom: 18px;
+}
+
+.statusSectionHeadV109 h2 {
+  margin: 6px 0 0;
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.statusSectionHeadV109 > span {
+  color: #94a3b8;
+  font-weight: 900;
+}
+
+.stabilityCheckGridV109 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.stabilityCheckGridV109 article,
+.routeCheckCardV109 {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 22px;
+  background: rgba(0,0,0,0.23);
+  padding: 18px;
+}
+
+.stabilityCheckGridV109 span {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(34, 211, 238, 0.12);
+  color: #67e8f9;
+  font-weight: 1000;
+  margin-bottom: 14px;
+}
+
+.stabilityCheckGridV109 strong {
+  display: block;
+  color: #e2e8f0;
+  line-height: 1.45;
+}
+
+.routeCheckListV109 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.routeCheckCardV109 {
+  display: grid;
+  gap: 10px;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.routeCheckCardV109:hover {
+  transform: translateY(-3px);
+  border-color: rgba(103,232,249,0.25);
+  background: rgba(255,255,255,0.055);
+}
+
+.routeCheckCardV109 div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.routeCheckCardV109 strong {
+  font-size: 19px;
+}
+
+.routeCheckCardV109 span,
+.routeCheckCardV109 small {
+  color: #94a3b8;
+  font-weight: 900;
+}
+
+.routeCheckCardV109 p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.routeCheckCardV109.stable small { color: #86efac; }
+.routeCheckCardV109.ready small { color: #67e8f9; }
+.routeCheckCardV109.planned small { color: #d8b4fe; }
+
+@media (max-width: 1180px) {
+  .statusHeroV109,
+  .stabilityCheckGridV109,
+  .routeCheckListV109 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .statusPageV109 {
+    padding: 10px 10px 40px;
+  }
+
+  .statusHeroV109,
+  .stabilityCheckShellV109,
+  .routeCheckShellV109 {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .statusHeroV109::after {
+    display: none;
+  }
+
+  .statusHeroV109 h1 {
+    font-size: clamp(42px, 14vw, 64px);
+  }
+
+  .statusHeroActionsV109,
+  .statusSectionHeadV109,
+  .routeCheckCardV109 div {
+    display: grid;
+  }
+
+  .statusHeroActionsV109 a {
+    text-align: center;
   }
 }

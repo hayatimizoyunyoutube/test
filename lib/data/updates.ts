@@ -27,12 +27,37 @@ export const completedUpdates: UpdateNote[] = [
   { version: "v1.0.5", title: "Kanal Deneyimi Geliştirme", status: "completed", summary: "Kanal sayfası daha profesyonel arşiv görünümüne taşındı.", items: ["Kanal hero alanı", "Premium kanal kartları", "Kanal istatistikleri"], supabaseRun: "Gerekli değil" },
   { version: "v1.0.6", title: "Güncelleme Merkezi Geliştirme", status: "completed", summary: "Güncelleme merkezi daha profesyonel ve okunabilir hale getirildi.", items: ["Premium hero alanı", "Sürüm istatistikleri", "Yol haritası kartları", "Mobil görünüm iyileştirmesi"], supabaseRun: "Gerekli değil" },
   { version: "v1.0.7", title: "Mobil Public Deneyim", status: "completed", summary: "Public sayfaların mobil deneyimi güçlendirildi ve alt mobil menü eklendi.", items: ["Global mobil alt menü", "Mobil header ve arama alanı cilası", "Kartların küçük ekran davranışı", "Mobilde tam genişlik aksiyon butonları", "Daha rahat dokunma alanları"], supabaseRun: "Gerekli değil" },
-  { version: "v1.0.8", title: "SEO ve Performans Hazırlığı", status: "completed", summary: "Site SEO, sosyal paylaşım ve temel performans hazırlığına geçirildi.", items: ["Global metadata düzeni", "Open Graph ve Twitter kartları", "robots.txt", "sitemap.xml", "manifest ve ikon dosyaları", "Health endpoint SEO route bilgileri"], supabaseRun: "Gerekli değil" }
+  { version: "v1.0.8", title: "SEO ve Performans Hazırlığı", status: "completed", summary: "Site SEO, sosyal paylaşım ve temel performans hazırlığına geçirildi.", items: ["Global metadata düzeni", "Open Graph ve Twitter kartları", "robots.txt", "sitemap.xml", "manifest ve ikon dosyaları", "Health endpoint SEO route bilgileri"], supabaseRun: "Gerekli değil" },
+  {
+    version: "v1.0.9",
+    title: "v1.1.0 Öncesi Stabilite",
+    status: "completed",
+    summary: "v1.1.0 Supabase geçişinden önce public route, mobil akış, SEO dosyaları ve health kontrolü sağlamlaştırıldı.",
+    items: [
+      "Public route kontrol listesi eklendi",
+      "Stabilite /status sayfası eklendi",
+      "Health endpoint route ve kontrol bilgileriyle güncellendi",
+      "Sitemap içine /status route'u eklendi",
+      "v1.1.0 Supabase geçiş planı netleştirildi"
+    ],
+    supabaseRun: "Gerekli değil"
+  }
 ];
 
 export const plannedUpdates: UpdateNote[] = [
-  { version: "v1.0.9", title: "v1.1.0 Öncesi Stabilite", status: "planned", summary: "v1.0.x public seri son kontrolleri yapılacak.", items: ["Route kontrolleri", "Link kontrolleri", "Mobil/tablet son düzeltmeler"], supabaseRun: "Gerekli değil" },
-  { version: "v1.1.0", title: "Supabase Public Veri Başlangıcı", status: "planned", summary: "Public arşiv verileri Supabase üzerinden okunmaya başlayacak.", items: ["İlk schema.sql", "Public veri okuma", "Demo verilerin tabloya taşınması"], supabaseRun: "Gerekli olacak" },
+  {
+    version: "v1.1.0",
+    title: "Supabase Public Veri Başlangıcı",
+    status: "planned",
+    summary: "Public arşiv verileri Supabase üzerinden okunmaya başlayacak.",
+    items: [
+      "İlk schema.sql",
+      "Public veri okuma helperları",
+      "Demo seri/kategori/kanal verilerinin tabloya taşınması",
+      "Hata durumunda demo veriye düşen güvenli yapı"
+    ],
+    supabaseRun: "Gerekli olacak"
+  },
   { version: "v4.0.0", title: "Ana Yayın ve Açılış Sürümü", status: "target", summary: "Hayatımız Oyun YouTube arşiv video sitesi public kullanıma açılacak.", items: ["Profesyonel public site", "Supabase veri sistemi", "Güvenli admin panel", "YouTube playlist arşivi"], supabaseRun: "Gerekli olabilir" }
 ];
 

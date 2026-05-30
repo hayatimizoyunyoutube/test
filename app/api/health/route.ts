@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { siteConfig } from "@/lib/config/site";
+import { publicRoutes, stabilityChecks } from "@/lib/data/site-routes";
 
 export async function GET() {
   return NextResponse.json({
@@ -8,7 +9,10 @@ export async function GET() {
     version: siteConfig.version,
     targetVersion: siteConfig.targetVersion,
     phase: siteConfig.phase,
-    status: "seo-performance-ready",
-    routes: ["/", "/series", "/categories", "/channels", "/updates", "/robots.txt", "/sitemap.xml"]
+    status: "stable-before-supabase",
+    supabaseRun: "Gerekli değil",
+    nextVersion: "v1.1.0",
+    checks: stabilityChecks,
+    routes: publicRoutes.map((route) => route.path)
   });
 }

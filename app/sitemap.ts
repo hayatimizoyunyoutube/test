@@ -5,7 +5,7 @@ import { archiveSeries } from "@/lib/data/series";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const staticRoutes = ["", "/series", "/categories", "/channels", "/updates"].map((route) => ({
+  const staticRoutes = ["", "/series", "/categories", "/channels", "/updates", "/status"].map((route) => ({
     url: `${siteConfig.url}${route}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
