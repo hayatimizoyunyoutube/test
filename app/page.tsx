@@ -14,7 +14,7 @@ export default function HomePage() {
 
         <nav className="nav">
           <a className="active" href="/">Ana Sayfa</a>
-          <a href="#series">Seriler</a>
+          <a href="/series">Seriler</a>
           <a href="#categories">Kategoriler</a>
           <a href="#about">Arşiv Hakkında</a>
         </nav>
@@ -44,7 +44,7 @@ export default function HomePage() {
             </p>
 
             <div className="actions">
-              <a href="#series">Serileri Keşfet</a>
+              <a href="/series">Serileri Keşfet</a>
               <a className="ghost" href="#about">Nasıl Çalışır?</a>
             </div>
           </div>
