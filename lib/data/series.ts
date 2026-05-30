@@ -86,3 +86,29 @@ export const statusLabels: Record<ArchiveSeriesStatus, string> = {
   active: "Devam Eden Seriler",
   planned: "Yakında Gelecek Seriler"
 };
+
+export function getSeriesBySlug(slug: string) {
+  return archiveSeries.find((series) => series.slug === slug);
+}
+
+export function getSeriesByStatus(status: ArchiveSeriesStatus) {
+  return archiveSeries.filter((series) => series.status === status);
+}
+
+export function getRelatedSeries(currentSlug: string, category: string) {
+  return archiveSeries
+    .filter((series) => series.slug !== currentSlug && series.category === category)
+    .slice(0, 3);
+}
+
+export function getDemoEpisodes(series: ArchiveSeries) {
+  const episodeCount = series.status === "planned" ? 0 : Math.max(3, Math.min(series.episodes, 8));
+
+  return Array.from({ length: episodeCount }, (_, index) => ({
+    id: `${series.id}-episode-${index + 1}`,
+    title: `${series.title} - Bölüm ${index + 1}`,
+    episodeNumber: index + 1,
+    duration: index % 2 === 0 ? "42 dk" : "35 dk",
+    status: index + 1 <= Math.ceil((series.progress / 100) * episodeCount) ? "Yayında" : "Hazırlanıyor"
+  }));
+}

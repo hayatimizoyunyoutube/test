@@ -972,3 +972,295 @@ h1 span {
     min-height: 120px;
   }
 }
+
+/* v0.0.5 - Series detail page */
+.seriesDetailPage {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 76% 0%, rgba(124, 58, 237, 0.26), transparent 34%),
+    radial-gradient(circle at 20% 12%, rgba(34, 211, 238, 0.16), transparent 32%),
+    #07101f;
+  padding: 34px;
+}
+
+.seriesDetailHero {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: stretch;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 32px;
+  padding: 34px;
+  background:
+    linear-gradient(110deg, rgba(5, 10, 20, 0.94), rgba(15, 23, 42, 0.72)),
+    radial-gradient(circle at 72% 38%, rgba(139, 92, 246, 0.38), transparent 30%);
+}
+
+.detailMetaLine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.detailMetaLine span,
+.detailStatus {
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  color: #cbd5e1;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.detailStatus.completed {
+  color: #86efac;
+  background: rgba(34, 197, 94, 0.14);
+}
+
+.detailStatus.active {
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.14);
+}
+
+.detailStatus.planned {
+  color: #f0abfc;
+  background: rgba(168, 85, 247, 0.14);
+}
+
+.detailHeroText h1 {
+  margin: 12px 0;
+  max-width: 780px;
+  font-size: clamp(44px, 7vw, 82px);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+.detailHeroText p {
+  max-width: 720px;
+  color: #cbd5e1;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.detailActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.detailActions a {
+  border-radius: 16px;
+  background: linear-gradient(90deg, #7c3aed, #2563eb);
+  padding: 15px 20px;
+  font-weight: 900;
+}
+
+.detailActions .ghost {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.detailPoster {
+  position: relative;
+  min-height: 360px;
+  border-radius: 28px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.25), transparent 22%),
+    linear-gradient(135deg, #7c3aed, #06b6d4);
+}
+
+.detailPoster span {
+  position: relative;
+  z-index: 2;
+  font-size: 64px;
+  font-weight: 1000;
+}
+
+.posterGlow {
+  position: absolute;
+  inset: 18px;
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.15);
+}
+
+.detailStatsGrid {
+  width: min(1240px, 100%);
+  margin: 22px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.detailStatsGrid article {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 22px;
+  background: rgba(255,255,255,0.055);
+  padding: 20px;
+}
+
+.detailStatsGrid span {
+  display: block;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.detailStatsGrid strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 22px;
+}
+
+.detailProgressBox,
+.episodeSection,
+.relatedSeriesSection {
+  width: min(1240px, 100%);
+  margin: 22px auto 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 28px;
+  background: rgba(255,255,255,0.045);
+  padding: 24px;
+}
+
+.detailProgressBox {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 24px;
+  align-items: center;
+}
+
+.detailProgressBox h2,
+.episodeSection h2,
+.relatedSeriesSection h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.detailProgressBox p {
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+.detailProgress {
+  border-radius: 20px;
+  background: rgba(0,0,0,0.22);
+  padding: 18px;
+}
+
+.episodeSectionHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.episodeSectionHead > span {
+  color: #cbd5e1;
+  font-weight: 900;
+}
+
+.episodeList {
+  display: grid;
+  gap: 12px;
+}
+
+.episodeCard {
+  display: grid;
+  grid-template-columns: 58px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.23);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 14px;
+}
+
+.episodeNumber {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #7c3aed, #0891b2);
+  font-weight: 1000;
+}
+
+.episodeCard h3 {
+  margin: 0 0 6px;
+}
+
+.episodeCard p {
+  margin: 0;
+  color: #94a3b8;
+}
+
+.episodeCard button {
+  border: 0;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.08);
+  color: #cbd5e1;
+  padding: 12px 14px;
+  font-weight: 900;
+}
+
+.emptyEpisodes {
+  border-radius: 20px;
+  background: rgba(0,0,0,0.22);
+  padding: 20px;
+  color: #cbd5e1;
+}
+
+.relatedSeriesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.relatedSeriesCard {
+  border-radius: 20px;
+  background: rgba(0,0,0,0.23);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 18px;
+}
+
+.relatedSeriesCard strong {
+  display: block;
+  font-size: 18px;
+}
+
+.relatedSeriesCard span {
+  display: block;
+  margin-top: 8px;
+  color: #94a3b8;
+}
+
+@media (max-width: 980px) {
+  .seriesDetailPage {
+    padding: 18px;
+  }
+
+  .seriesDetailHero,
+  .detailProgressBox,
+  .detailStatsGrid,
+  .relatedSeriesGrid,
+  .episodeCard {
+    grid-template-columns: 1fr;
+  }
+
+  .detailPoster {
+    min-height: 220px;
+  }
+
+  .episodeCard button {
+    width: 100%;
+  }
+}
