@@ -73,18 +73,31 @@ export const completedUpdates: UpdateNote[] = [
     summary: "Mobil görünüm, arama alanı ve buton tasarımları profesyonelleştirildi.",
     items: ["Mobil header", "Profesyonel arama", "Buton ve kart cilası"],
     supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v0.0.9",
+    title: "v1.0.0 Öncesi Public Cila",
+    status: "completed",
+    summary: "Güncelleme merkezi tek kolon ve daha okunabilir hale getirildi.",
+    items: ["Tek kolon güncelleme akışı", "Kompakt kartlar", "Mobil akış iyileştirmesi"],
+    supabaseRun: "Gerekli değil"
+  },
+  {
+    version: "v1.0.0",
+    title: "Public Arşiv Beta",
+    status: "completed",
+    summary: "Public kullanıcı için ilk beta arşiv görünümü tamamlandı.",
+    items: [
+      "Ana sayfa beta görünümü",
+      "Arşiv istatistikleri",
+      "Öne çıkan seri vitrini",
+      "Keşif alanları"
+    ],
+    supabaseRun: "Gerekli değil"
   }
 ];
 
 export const plannedUpdates: UpdateNote[] = [
-  {
-    version: "v1.0.0",
-    title: "Public Arşiv Beta",
-    status: "planned",
-    summary: "Public kullanıcı için ilk büyük beta arşiv görünümü hazırlanacak.",
-    items: ["Ana sayfa beta cilası", "Seriler/kategoriler/kanallar deneyimi", "Demo veriyle tam akış"],
-    supabaseRun: "Gerekli değil"
-  },
   {
     version: "v1.0.1",
     title: "Public Beta Fix 1",

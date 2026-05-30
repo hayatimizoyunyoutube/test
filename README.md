@@ -1,48 +1,31 @@
 # Hayatımız Oyun - YouTube Arşiv Video Sitesi
 
-Hayatımız Oyun, YouTube oyun serilerini düzenli ve profesyonel bir arşiv sitesinde toplamak için geliştirilen yeni nesil arşiv projesidir.
+Mevcut sürüm: v1.0.0
 
-## Mevcut sürüm
+Ana yayın hedefi: v4.0.0
 
-v0.0.1
+## v1.0.0 Public Arşiv Beta
 
-## Ana yayın hedefi
+Bu sürümde public arşiv deneyimi beta seviyesine getirildi.
 
-v4.0.0
+## Eklenenler
 
-## Teknoloji hedefi
+- Public ana sayfa beta görünümü
+- Seriler sayfası
+- Kategoriler sayfası
+- Kanallar sayfası
+- Seri detay sayfası
+- Güncelleme merkezi
+- Arama ve filtreleme taslağı
+- Mobil arayüz iyileştirmeleri
+- Public arşiv istatistikleri
 
-- GitHub
-- Vercel
+## Henüz yok
+
 - Supabase
-- Next.js
-- YouTube API
-- RAWG API
-
-## Geliştirme yöntemi
-
-Proje sıfırdan ve küçük sürümlerle geliştirilecek.
-
-Her sürümde tek bir ana hedef olacak.  
-Böylece site bozulmadan, kontrollü şekilde büyüyecek.
-
-## v0.0.1 içinde olanlar
-
-- Public ana sayfa
-- YouTube arşiv tanıtımı
-- Tamamlanan Seriler alanı
-- Devam Eden Seriler alanı
-- Yakında Gelecek Seriler alanı
-- Profesyonel koyu tema başlangıcı
-- /api/health endpoint
-
-## v0.0.1 içinde olmayanlar
-
-- Supabase bağlantısı
-- Kayıt ol / giriş yap
+- Kayıt / giriş
 - Admin panel
-- Oyun ekleme paneli
 - YouTube API
 - RAWG API
 
-Bu alanlar sonraki sürümlerde yavaş yavaş eklenecek.
+Bu özellikler ileriki sürümlerde kontrollü şekilde eklenecek.

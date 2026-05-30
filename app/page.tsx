@@ -1,4 +1,13 @@
-const version = process.env.NEXT_PUBLIC_SITE_VERSION || "v0.0.8";
+import { archiveSeries } from "@/lib/data/series";
+import { archiveCategories } from "@/lib/data/categories";
+import { archiveChannels } from "@/lib/data/channels";
+
+const version = process.env.NEXT_PUBLIC_SITE_VERSION || "v1.0.0";
+
+const completedCount = archiveSeries.filter((item) => item.status === "completed").length;
+const activeCount = archiveSeries.filter((item) => item.status === "active").length;
+const plannedCount = archiveSeries.filter((item) => item.status === "planned").length;
+const totalEpisodes = archiveSeries.reduce((total, item) => total + item.episodes, 0);
 
 const quickLinks = [
   { href: "/series", label: "Seriler" },
@@ -7,9 +16,17 @@ const quickLinks = [
   { href: "/updates", label: "Güncellemeler" }
 ];
 
+function statusText(status: string) {
+  if (status === "completed") return "Tamamlandı";
+  if (status === "active") return "Devam Ediyor";
+  return "Yakında";
+}
+
 export default function HomePage() {
+  const featuredSeries = archiveSeries.slice(0, 6);
+
   return (
-    <main className="site-shell">
+    <main className="site-shell homeBetaShell">
       <aside className="sidebar">
         <div className="brand">
           <div className="brandIcon">▶</div>
@@ -28,11 +45,11 @@ export default function HomePage() {
 
         <div className="versionBox">
           <strong>{version}</strong>
-          <span>Mobil arayüz ve profesyonel butonlar</span>
+          <span>Public Arşiv Beta</span>
         </div>
       </aside>
 
-      <section className="content">
+      <section className="content betaContent">
         <header className="mobileHeader">
           <div className="brand compact">
             <div className="brandIcon">▶</div>
@@ -43,29 +60,29 @@ export default function HomePage() {
           </div>
         </header>
 
-        <header className="topbar proTopbar">
-          <form className="homeSearch" action="/series">
+        <header className="topbar proTopbar betaTopbar">
+          <form className="homeSearch betaSearch" action="/series">
             <span>⌕</span>
-            <input name="q" placeholder="Seri, oyun veya kanal ara..." />
-            <button type="submit">Ara</button>
+            <input name="q" placeholder="Seri, oyun, kategori veya kanal ara..." />
+            <button type="submit">Arşivde Ara</button>
           </form>
 
           <div className="topbarActions">
             <a href="/series">Serileri Aç</a>
-            <a href="/updates" className="soft">Gelişim Notları</a>
+            <a href="/updates" className="soft">Yol Haritası</a>
           </div>
         </header>
 
-        <section className="hero proHero">
-          <div className="heroText">
-            <p className="eyebrow">YOUTUBE PLAYLIST ARŞİVİ</p>
+        <section className="betaHero">
+          <div className="betaHeroText">
+            <p className="eyebrow">v1.0.0 · PUBLIC ARŞİV BETA</p>
             <h1>
-              Oyun Serilerini <span>Profesyonel Arşivde</span> Topluyoruz.
+              YouTube Oyun Serileri İçin <span>Profesyonel Arşiv Merkezi.</span>
             </h1>
             <p>
-              Hayatımız Oyun YouTube serilerini düzenli, mobil uyumlu ve
-              profesyonel bir arşiv deneyimiyle sunuyoruz. Tamamlanan, devam
-              eden ve yakında gelecek seriler tek merkezde.
+              Tamamlanan, devam eden ve yakında gelecek oyun serilerini tek
+              merkezde keşfet. Bu beta sürümde public arşiv deneyimi demo
+              verilerle tamamlandı.
             </p>
 
             <div className="actions proActions">
@@ -75,82 +92,124 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="heroPanel proHeroPanel">
-            <div>
-              <strong>01</strong>
-              <span>Seriler düzenli gruplara ayrılır.</span>
+          <div className="betaHeroBoard">
+            <div className="boardLine">
+              <span>Toplam Seri</span>
+              <strong>{archiveSeries.length}</strong>
             </div>
-            <div>
-              <strong>02</strong>
-              <span>Mobilde daha rahat gezilir.</span>
+            <div className="boardLine">
+              <span>Toplam Bölüm</span>
+              <strong>{totalEpisodes}</strong>
             </div>
-            <div>
-              <strong>03</strong>
-              <span>Arama doğrudan serilere yönlendirir.</span>
+            <div className="boardLine">
+              <span>Kategori</span>
+              <strong>{archiveCategories.length}</strong>
+            </div>
+            <div className="boardLine">
+              <span>Kanal</span>
+              <strong>{archiveChannels.length}</strong>
             </div>
           </div>
         </section>
 
-        <section className="mobileQuickNav">
+        <section className="betaStatsGrid">
+          <article>
+            <span>Tamamlanan Seriler</span>
+            <strong>{completedCount}</strong>
+            <p>Arşivlenmiş ve bitmiş seri alanı.</p>
+          </article>
+          <article>
+            <span>Devam Eden Seriler</span>
+            <strong>{activeCount}</strong>
+            <p>Aktif şekilde büyüyen seri alanı.</p>
+          </article>
+          <article>
+            <span>Yakında Gelecek</span>
+            <strong>{plannedCount}</strong>
+            <p>Planlanan seri ve yayın hazırlıkları.</p>
+          </article>
+        </section>
+
+        <section className="mobileQuickNav betaQuickNav">
           {quickLinks.map((link) => (
             <a key={link.href} href={link.href}>{link.label}</a>
           ))}
         </section>
 
-        <section id="series" className="seriesGrid proSeriesGrid">
-          <article className="sectionCard completed">
-            <div className="sectionHead">
-              <h2>Tamamlanan Seriler</h2>
-              <span>Arşiv</span>
+        <section className="betaSection">
+          <div className="betaSectionHead">
+            <div>
+              <p className="eyebrow">ÖNE ÇIKAN SERİLER</p>
+              <h2>Public Arşiv Beta Vitrini</h2>
             </div>
-            <p>Tüm bölümleri bitmiş ve kalıcı arşive alınmış seriler.</p>
-            <div className="miniList">
-              <div>The Witcher 3 <span>Hazırlanıyor</span></div>
-              <div>God of War <span>Hazırlanıyor</span></div>
-              <div>Red Dead Redemption 2 <span>Hazırlanıyor</span></div>
-            </div>
-            <a className="cardAction" href="/series?status=completed">Tamamlananları Gör</a>
-          </article>
+            <a href="/series">Tüm Serileri Gör</a>
+          </div>
 
-          <article className="sectionCard activeSeries">
-            <div className="sectionHead">
-              <h2>Devam Eden Seriler</h2>
-              <span>Aktif</span>
-            </div>
-            <p>Yeni bölümleri geldikçe arşive eklenecek aktif seriler.</p>
-            <div className="miniList">
-              <div>Elden Ring <span>Hazırlanıyor</span></div>
-              <div>Baldur's Gate 3 <span>Hazırlanıyor</span></div>
-              <div>Cyberpunk 2077 <span>Hazırlanıyor</span></div>
-            </div>
-            <a className="cardAction" href="/series?status=active">Devam Edenleri Gör</a>
-          </article>
+          <div className="betaFeaturedGrid">
+            {featuredSeries.map((series) => (
+              <a key={series.id} href={`/series/${series.slug}`} className={`betaFeaturedCard ${series.status}`}>
+                <div className="betaPoster">
+                  <span>{series.title.slice(0, 2).toUpperCase()}</span>
+                </div>
+                <div>
+                  <div className="seriesMeta">
+                    <span>{series.category}</span>
+                    <span>{statusText(series.status)}</span>
+                  </div>
+                  <h3>{series.title}</h3>
+                  <p>{series.description}</p>
 
-          <article className="sectionCard planned">
-            <div className="sectionHead">
-              <h2>Yakında Gelecek Seriler</h2>
-              <span>Plan</span>
-            </div>
-            <p>Başlaması planlanan ve arşiv takvimine alınacak seriler.</p>
-            <div className="miniList">
-              <div>Starfield <span>Yakında</span></div>
-              <div>GTA VI <span>Planlandı</span></div>
-              <div>S.T.A.L.K.E.R. 2 <span>Yakında</span></div>
-            </div>
-            <a className="cardAction" href="/series?status=planned">Planlananları Gör</a>
-          </article>
+                  <div className="progressTop">
+                    <span>{series.episodes} bölüm</span>
+                    <span>%{series.progress}</span>
+                  </div>
+                  <div className="progressTrack">
+                    <div style={{ width: `${series.progress}%` }} />
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </section>
 
-        <section id="about" className="aboutBox proAbout">
+        <section className="betaSection betaExplore">
+          <div className="betaSectionHead">
+            <div>
+              <p className="eyebrow">KEŞİF ALANLARI</p>
+              <h2>Arşivi Nasıl Gezebilirsin?</h2>
+            </div>
+          </div>
+
+          <div className="betaExploreGrid">
+            <a href="/series">
+              <strong>Seriler</strong>
+              <span>Tamamlanan, devam eden ve yakında gelecek oyun serileri.</span>
+            </a>
+            <a href="/categories">
+              <strong>Kategoriler</strong>
+              <span>Aksiyon, RPG, korku, bilim kurgu ve diğer arşiv türleri.</span>
+            </a>
+            <a href="/channels">
+              <strong>Kanallar</strong>
+              <span>Arşiv içeriklerini kanal mantığıyla grupla ve keşfet.</span>
+            </a>
+            <a href="/updates">
+              <strong>Güncellemeler</strong>
+              <span>Projenin hangi sürümde ne kazandığını takip et.</span>
+            </a>
+          </div>
+        </section>
+
+        <section className="aboutBox proAbout betaNote">
           <div>
-            <h2>v0.0.8 hedefi</h2>
+            <h2>v1.0.0 beta notu</h2>
             <p>
-              Bu sürümde sitenin mobil görünümü, arama alanı ve buton düzenleri
-              profesyonel hale getirildi. Supabase, auth ve admin özellikleri
-              sonraki sürümlerde eklenecek.
+              Bu sürüm public arşiv deneyimini toparlar. Henüz Supabase, giriş
+              sistemi, admin panel ve YouTube API yok. Bunlar ileriki sürümlerde
+              kontrollü şekilde eklenecek.
             </p>
           </div>
-          <a href="/updates">Yol Haritasını Aç</a>
+          <a href="/updates">Güncelleme Akışını Aç</a>
         </section>
       </section>
     </main>
