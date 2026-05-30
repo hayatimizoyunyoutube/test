@@ -17,6 +17,7 @@ export default function HomePage() {
           <a href="/series">Seriler</a>
           <a href="/categories">Kategoriler</a>
           <a href="/channels">Kanallar</a>
+          <a href="/updates">Güncellemeler</a>
           <a href="#about">Arşiv Hakkında</a>
         </nav>
 
