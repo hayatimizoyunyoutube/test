@@ -13,3 +13,8 @@ Bu sürümden itibaren demo veriler kaldırıldı. Public sayfalar gerçek Supab
 ## Supabase Run
 
 Gerekli.
+
+
+## v1.1.0 Server Error Fix
+
+Null title/slug gelen eski Supabase kayıtlarına karşı güvenli veri okuma düzeltmesi eklendi.

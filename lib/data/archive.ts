@@ -170,66 +170,101 @@ function firstRelation<T>(value: T | T[] | null | undefined): T | null {
   return value || null;
 }
 
+function safeText(value: unknown, fallback: string) {
+  const text = typeof value === "string" ? value.trim() : "";
+  return text || fallback;
+}
+
+function safeSlug(value: unknown, fallback: string) {
+  const text = typeof value === "string" ? value.trim() : "";
+  return text || fallback;
+}
+
+function initials(value: unknown, fallback = "AR") {
+  return safeText(value, fallback).slice(0, 2).toLocaleUpperCase("tr-TR");
+}
+
+function safeStatus(value: unknown): ArchiveSeriesStatus {
+  if (value === "completed" || value === "active" || value === "planned") return value;
+  return "planned";
+}
+
+function safeTone(value: unknown): CategoryTone {
+  if (value === "purple" || value === "blue" || value === "green" || value === "orange" || value === "red" || value === "cyan") return value;
+  return "purple";
+}
+
+function safeNumber(value: unknown, fallback = 0) {
+  return typeof value === "number" && Number.isFinite(value) ? value : fallback;
+}
+
 function mapCategory(row: CategoryRow): ArchiveCategory {
+  const title = safeText(row.title, "İsimsiz Kategori");
+
   return {
-    id: row.id,
-    title: row.title,
-    slug: row.slug,
-    description: row.description || "",
-    longDescription: row.long_description || row.description || "",
-    tone: row.tone || "purple",
-    icon: row.icon || row.title.slice(0, 2).toUpperCase(),
-    highlight: row.highlight || "Arşiv",
-    sortOrder: row.sort_order || 0
+    id: safeText(row.id, `category-${title}`),
+    title,
+    slug: safeSlug(row.slug, `category-${safeText(row.id, title).slice(0, 8)}`),
+    description: safeText(row.description, ""),
+    longDescription: safeText(row.long_description, safeText(row.description, "")),
+    tone: safeTone(row.tone),
+    icon: safeText(row.icon, initials(title)),
+    highlight: safeText(row.highlight, "Arşiv"),
+    sortOrder: safeNumber(row.sort_order)
   };
 }
 
 function mapChannel(row: ChannelRow): ArchiveChannel {
+  const title = safeText(row.title, "İsimsiz Kanal");
+
   return {
-    id: row.id,
-    title: row.title,
-    slug: row.slug,
-    handle: row.handle || "@hayatimizoyun",
-    description: row.description || "",
-    longDescription: row.long_description || row.description || "",
-    tone: row.tone || "purple",
-    icon: row.icon || row.title.slice(0, 2).toUpperCase(),
-    highlight: row.highlight || "Kanal",
-    sortOrder: row.sort_order || 0
+    id: safeText(row.id, `channel-${title}`),
+    title,
+    slug: safeSlug(row.slug, `channel-${safeText(row.id, title).slice(0, 8)}`),
+    handle: safeText(row.handle, "@hayatimizoyun"),
+    description: safeText(row.description, ""),
+    longDescription: safeText(row.long_description, safeText(row.description, "")),
+    tone: safeTone(row.tone),
+    icon: safeText(row.icon, initials(title)),
+    highlight: safeText(row.highlight, "Kanal"),
+    sortOrder: safeNumber(row.sort_order)
   };
 }
 
 function mapSeries(row: SeriesRow): ArchiveSeries {
   const category = firstRelation(row.category);
   const channel = firstRelation(row.channel);
+  const title = safeText(row.title, "İsimsiz Seri");
 
   return {
-    id: row.id,
-    title: row.title,
-    slug: row.slug,
-    status: row.status || "planned",
-    description: row.description || "",
-    category: category?.title || "Kategorisiz",
-    categorySlug: category?.slug,
-    channel: channel?.title || "Kanalsız",
-    channelSlug: channel?.slug,
-    episodes: row.total_episodes || 0,
-    progress: row.progress_percent || 0,
+    id: safeText(row.id, `series-${title}`),
+    title,
+    slug: safeSlug(row.slug, `series-${safeText(row.id, title).slice(0, 8)}`),
+    status: safeStatus(row.status),
+    description: safeText(row.description, ""),
+    category: category ? safeText(category.title, "Kategorisiz") : "Kategorisiz",
+    categorySlug: category ? safeSlug(category.slug, "") : undefined,
+    channel: channel ? safeText(channel.title, "Kanalsız") : "Kanalsız",
+    channelSlug: channel ? safeSlug(channel.slug, "") : undefined,
+    episodes: safeNumber(row.total_episodes),
+    progress: safeNumber(row.progress_percent),
     isFeatured: Boolean(row.is_featured),
-    sortOrder: row.sort_order || 0
+    sortOrder: safeNumber(row.sort_order)
   };
 }
 
 function mapEpisode(row: EpisodeRow): ArchiveEpisode {
+  const title = safeText(row.title, "İsimsiz Bölüm");
+
   return {
-    id: row.id,
-    title: row.title,
-    slug: row.slug,
-    episodeNumber: row.episode_number || 0,
-    duration: row.duration_text || "Süre eklenmedi",
-    status: row.status || "planned",
-    youtubeUrl: row.youtube_url || "",
-    publishedAt: row.published_at
+    id: safeText(row.id, `episode-${title}`),
+    title,
+    slug: safeSlug(row.slug, `episode-${safeText(row.id, title).slice(0, 8)}`),
+    episodeNumber: safeNumber(row.episode_number),
+    duration: safeText(row.duration_text, "Süre eklenmedi"),
+    status: safeText(row.status, "planned"),
+    youtubeUrl: safeText(row.youtube_url, ""),
+    publishedAt: typeof row.published_at === "string" ? row.published_at : null
   };
 }
 
@@ -304,7 +339,7 @@ export function filterSeries(series: ArchiveSeries[], params: { q?: string; stat
 
   return series.filter((item) => {
     const matchesQuery = !query || [item.title, item.category, item.channel, item.description]
-      .some((value) => value.toLocaleLowerCase("tr-TR").includes(query));
+      .some((value) => safeText(value, "").toLocaleLowerCase("tr-TR").includes(query));
     const matchesStatus = selectedStatus === "all" || item.status === selectedStatus;
     const matchesCategory = selectedCategory === "all" || item.category === selectedCategory || item.categorySlug === selectedCategory;
     const matchesChannel = selectedChannel === "all" || item.channel === selectedChannel || item.channelSlug === selectedChannel;

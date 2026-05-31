@@ -30,3 +30,8 @@ Gerekli. `SUPABASE_RUN_NOTU.md` dosyasını oku.
 - Kayıt / giriş
 - YouTube API senkronizasyonu
 - RAWG API
+
+
+## v1.1.0 Server Error Fix
+
+Null title/slug gelen eski Supabase kayıtlarına karşı güvenli veri okuma düzeltmesi eklendi.
