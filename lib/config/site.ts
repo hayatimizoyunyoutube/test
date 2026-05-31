@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Hayatımız Oyun",
   description: "YouTube oyun serileri arşiv video sitesi",
-  version: "v1.1.1",
+  version: "v1.1.2",
   targetVersion: "v4.0.0",
-  phase: "Supabase Veri Fix 1",
+  phase: "Supabase İçerik Ekleme Kolaylığı",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://hayatimiz-oyun.vercel.app",
   locale: "tr_TR",
   keywords: [

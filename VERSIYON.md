@@ -1,15 +1,27 @@
 # Sürüm Bilgisi
 
-Mevcut sürüm: v1.1.1
+Mevcut sürüm: v1.1.2
 
 Ana açılış hedefi: v4.0.0
 
-Kural: Her şey küçük ve kontrollü sürümlerle eklenecek.
+## v1.1.2 - Supabase İçerik Ekleme Kolaylığı
 
-## v1.1.1
+Bu sürümde demo veri geri getirilmeden, gerçek Supabase içeriği eklemek için rehber ve SQL şablonları hazırlandı.
 
-Supabase Veri Fix 1 tamamlandı. v1.1.0 sonrası health/status, null veri koruması ve boş durum ekranları güçlendirildi.
+## Eklenenler
 
-## Sonraki sürüm
+- Supabase içerik ekleme rehberi
+- Kategori ekleme SQL şablonu
+- Kanal ekleme SQL şablonu
+- Seri ekleme SQL şablonu
+- Bölüm ekleme SQL şablonu
+- Tam içerik ekleme akışı şablonu
+- /status sayfasında tablo doluluk kontrolü
 
-v1.1.2 - Android / PWA Hazırlığı
+## Supabase Run
+
+Zorunlu değil. İçerik eklemek istiyorsan `supabase/content-templates/` içindeki şablonları düzenleyip Supabase SQL Editor’da çalıştırabilirsin.
+
+## Kural
+
+Demo veri yok. Public sayfalar gerçek Supabase verisiyle çalışacak. Veri yoksa profesyonel boş durum ekranı görünecek.

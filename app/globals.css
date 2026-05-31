@@ -793,3 +793,100 @@ button, input { font: inherit; }
   margin: 8px 0 0;
   color: #94a3b8;
 }
+
+/* v1.1.2 - Supabase Content Guide */
+.statusPageV112 {
+  background:
+    radial-gradient(circle at 78% 0%, rgba(34, 211, 238, 0.2), transparent 34%),
+    radial-gradient(circle at 18% 0%, rgba(124, 58, 237, 0.18), transparent 32%),
+    linear-gradient(180deg, #05070d 0%, #07101f 62%, #05070d 100%);
+}
+
+.contentGuidePanelV112 {
+  width: min(1380px, 100%);
+  margin: 22px auto 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+  padding: 22px;
+  box-shadow: 0 28px 90px rgba(0,0,0,0.22);
+}
+
+.contentTableGridV112,
+.contentStepsV112 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.contentTableCardV112,
+.contentStepsV112 article {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 22px;
+  background: rgba(0,0,0,0.23);
+  padding: 18px;
+}
+
+.contentTableCardV112 > span,
+.contentStepsV112 strong {
+  display: inline-grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  border-radius: 13px;
+  background: rgba(255,255,255,0.08);
+  color: #67e8f9;
+  font-weight: 1000;
+}
+
+.contentTableCardV112.ready > span {
+  color: #86efac;
+}
+
+.contentTableCardV112.empty > span {
+  color: #f0abfc;
+}
+
+.contentTableCardV112 strong,
+.contentStepsV112 h3 {
+  display: block;
+  margin-top: 14px;
+  font-size: 20px;
+}
+
+.contentTableCardV112 p,
+.contentStepsV112 p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.contentTableCardV112 small,
+.contentTableCardV112 em {
+  display: block;
+  color: #94a3b8;
+  font-size: 13px;
+  font-style: normal;
+  margin-top: 8px;
+}
+
+.contentStepsV112 code {
+  color: #67e8f9;
+}
+
+@media (max-width: 1180px) {
+  .contentTableGridV112,
+  .contentStepsV112 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .contentGuidePanelV112 {
+    padding: 16px;
+    border-radius: 22px;
+  }
+  .contentTableGridV112,
+  .contentStepsV112 {
+    grid-template-columns: 1fr;
+  }
+}

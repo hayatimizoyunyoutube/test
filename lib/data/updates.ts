@@ -70,17 +70,40 @@ export const completedUpdates: UpdateNote[] = [
       "İsteğe bağlı data fix SQL eklendi"
     ],
     supabaseRun: "İsteğe bağlı fix SQL"
+  },
+  {
+    version: "v1.1.2",
+    title: "Supabase İçerik Ekleme Kolaylığı",
+    status: "completed",
+    summary: "Demo veri olmadan gerçek kategori, kanal, seri ve bölüm eklemeyi kolaylaştıran SQL şablonları ve rehberler eklendi.",
+    items: [
+      "Supabase içerik ekleme rehberi",
+      "Kategori ekleme SQL şablonu",
+      "Kanal ekleme SQL şablonu",
+      "Seri ekleme SQL şablonu",
+      "Bölüm ekleme SQL şablonu",
+      "Status sayfasında tablo doluluk kontrolü"
+    ],
+    supabaseRun: "Zorunlu değil; içerik eklemek için şablon SQL kullanılabilir"
   }
 ];
 
 export const plannedUpdates: UpdateNote[] = [
   {
-    version: "v1.1.2",
-    title: "Android / PWA Hazırlığı",
+    version: "v1.1.3",
+    title: "Public Veri Listeleme Fix 2",
     status: "planned",
-    summary: "Public site Android cihazlarda uygulama gibi kullanılmaya hazırlanacak.",
-    items: ["Manifest iyileştirme", "Mobil yükleme ekranı", "Offline sayfası", "PWA ikonları"],
-    supabaseRun: "Gerekli değil"
+    summary: "Gerçek Supabase verisiyle listeleme, bağlantı ve boş durum ekranları daha da sağlamlaştırılacak.",
+    items: ["Eksik kategori/kanal bağlantısı koruması", "Boş durum ekranları", "Public listeleme güvenliği"],
+    supabaseRun: "Gerekli olmayabilir"
+  },
+  {
+    version: "v1.1.4",
+    title: "Seri Detay ve Bölüm Listesi Fix",
+    status: "planned",
+    summary: "Seri detay sayfası ve gerçek bölüm listesi Supabase verisiyle güçlendirilecek.",
+    items: ["Bölüm listesi", "Seri kapak/banner alanı", "Boş bölüm ekranı"],
+    supabaseRun: "Gerekli olmayabilir"
   },
   { version: "v4.0.0", title: "Ana Yayın ve Açılış Sürümü", status: "target", summary: "Hayatımız Oyun YouTube arşiv video sitesi public kullanıma açılacak.", items: ["Profesyonel public site", "Supabase veri sistemi", "Güvenli admin panel", "YouTube playlist arşivi"], supabaseRun: "Gerekli olabilir" }
 ];
