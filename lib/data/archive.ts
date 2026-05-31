@@ -100,7 +100,7 @@ async function supabaseGet<T>(table: string, params: Record<string, string> = {}
         Authorization: `Bearer ${config.anonKey}`,
         "Content-Type": "application/json"
       },
-      next: { revalidate: 60 }
+      cache: "no-store"
     });
 
     if (!response.ok) {
@@ -198,6 +198,11 @@ function safeNumber(value: unknown, fallback = 0) {
   return typeof value === "number" && Number.isFinite(value) ? value : fallback;
 }
 
+function clampPercent(value: unknown) {
+  const number = safeNumber(value, 0);
+  return Math.max(0, Math.min(100, number));
+}
+
 function mapCategory(row: CategoryRow): ArchiveCategory {
   const title = safeText(row.title, "İsimsiz Kategori");
 
@@ -247,7 +252,7 @@ function mapSeries(row: SeriesRow): ArchiveSeries {
     channel: channel ? safeText(channel.title, "Kanalsız") : "Kanalsız",
     channelSlug: channel ? safeSlug(channel.slug, "") : undefined,
     episodes: safeNumber(row.total_episodes),
-    progress: safeNumber(row.progress_percent),
+    progress: clampPercent(row.progress_percent),
     isFeatured: Boolean(row.is_featured),
     sortOrder: safeNumber(row.sort_order)
   };

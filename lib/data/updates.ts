@@ -56,22 +56,31 @@ export const completedUpdates: UpdateNote[] = [
       "Health ve status sayfaları Supabase durumunu göstermeye başladı"
     ],
     supabaseRun: "Gerekli"
+  },
+  {
+    version: "v1.1.1",
+    title: "Supabase Veri Fix 1",
+    status: "completed",
+    summary: "Supabase geçişi sonrası boş/null veri korumaları, health/status kontrolleri ve public veri dayanıklılığı güçlendirildi.",
+    items: [
+      "Null veri koruması güçlendirildi",
+      "Health API build ve runtime güvenli hale getirildi",
+      "Status sayfası v1.1.1 veri kontrol ekranına güncellendi",
+      "Progress yüzdesi 0-100 aralığına sabitlendi",
+      "İsteğe bağlı data fix SQL eklendi"
+    ],
+    supabaseRun: "İsteğe bağlı fix SQL"
   }
 ];
 
 export const plannedUpdates: UpdateNote[] = [
   {
-    version: "v1.1.1",
-    title: "Supabase Veri Fix 1",
+    version: "v1.1.2",
+    title: "Android / PWA Hazırlığı",
     status: "planned",
-    summary: "Supabase public veri geçişi sonrası olası boş durum, ilişki ve listeleme sorunları düzeltilecek.",
-    items: [
-      "Supabase sorgu düzeltmeleri",
-      "Boş durum ekranlarının kontrolü",
-      "Seri detay bölüm ilişkilerinin kontrolü",
-      "Kategori/kanal ilişki filtrelerinin iyileştirilmesi"
-    ],
-    supabaseRun: "Gerekli olmayabilir"
+    summary: "Public site Android cihazlarda uygulama gibi kullanılmaya hazırlanacak.",
+    items: ["Manifest iyileştirme", "Mobil yükleme ekranı", "Offline sayfası", "PWA ikonları"],
+    supabaseRun: "Gerekli değil"
   },
   { version: "v4.0.0", title: "Ana Yayın ve Açılış Sürümü", status: "target", summary: "Hayatımız Oyun YouTube arşiv video sitesi public kullanıma açılacak.", items: ["Profesyonel public site", "Supabase veri sistemi", "Güvenli admin panel", "YouTube playlist arşivi"], supabaseRun: "Gerekli olabilir" }
 ];

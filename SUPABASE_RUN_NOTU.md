@@ -1,28 +1,13 @@
-# v1.1.0 Supabase Run Notu
+# Supabase Run Notu - v1.1.1
 
-Bu sürümde Supabase Run gereklidir.
+v1.1.1 için Supabase SQL zorunlu değildir.
 
-Supabase Dashboard içinde:
+v1.1.0 schema.sql ve null-title fix zaten çalıştıysa tekrar SQL çalıştırmana gerek yok.
 
-1. Project → SQL Editor bölümünü aç.
-2. `supabase/schema.sql` dosyasının tamamını kopyala.
-3. SQL Editor içine yapıştır.
-4. Run çalıştır.
+Eski veya yarım kayıtlar yüzünden title/slug/progress alanlarında sorun varsa şunu çalıştırabilirsin:
 
-## Önemli
-
-Bu schema demo veri eklemez. Sadece gerçek arşiv tablolarını oluşturur.
-
-Demo The Witcher, Elden Ring, GTA gibi sahte kartlar artık yoktur. Supabase tablolarına gerçek veri eklenene kadar public sayfalarda profesyonel boş durum ekranı görünür.
-
-## Vercel Environment Variables
-
-v1.1.0 için Vercel ortamında şunlar dolu olmalı:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
+```txt
+supabase/schema-v1.1.1-data-fix.sql
 ```
 
-Şimdilik public okuma için `NEXT_PUBLIC_SUPABASE_URL` ve `NEXT_PUBLIC_SUPABASE_ANON_KEY` yeterlidir. Service role ileride admin panelde kullanılacak.
+Bu dosya demo veri eklemez. Sadece eski/null kayıtları güvenli hale getirir.
